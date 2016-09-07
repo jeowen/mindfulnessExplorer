@@ -100,19 +100,19 @@
 }
 
 + (void (^)(AFHTTPRequestOperation *operation, id responseObject))successBlock:(CatalyzeSuccessBlock)success {
-    return ^(AFHTTPRequestOperation *operation, id responseObject) {
+    return Block_copy(^(AFHTTPRequestOperation *operation, id responseObject) {
         if (success) {
             success([NSJSONSerialization JSONObjectWithData:responseObject options:0 error:nil]);
         }
-    };
+    });
 }
 
 + (void (^)(AFHTTPRequestOperation *operation, id responseObject))failureBlock:(CatalyzeFailureBlock)failure {
-    return ^(AFHTTPRequestOperation *operation, NSError *error) {
+    return Block_copy(^(AFHTTPRequestOperation *operation, NSError *error) {
         if (failure) {
             failure([NSJSONSerialization JSONObjectWithData:[operation responseObject] options:0 error:nil], (int)[[operation response] statusCode], error);
         }
-    };
+    });
 }
 
 + (void)updateHeaders {
