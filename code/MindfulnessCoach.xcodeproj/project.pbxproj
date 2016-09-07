@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5652FA381D8093E600EA1B8D /* Catalyze in Resources */ = {isa = PBXBuildFile; fileRef = 5652FA371D8093E600EA1B8D /* Catalyze */; };
 		B90B9E6E1559BD740001FAEF /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B90B9E6D1559BD740001FAEF /* SettingsViewController.m */; };
 		B90B9E75156068230001FAEF /* practiceChime.wav in Resources */ = {isa = PBXBuildFile; fileRef = B90B9E74156068230001FAEF /* practiceChime.wav */; };
 		B90B9E77156068730001FAEF /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B90B9E76156068730001FAEF /* AudioToolbox.framework */; };
@@ -233,6 +234,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5652FA371D8093E600EA1B8D /* Catalyze */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Catalyze; sourceTree = "<group>"; };
 		B90B9E6C1559BD740001FAEF /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		B90B9E6D1559BD740001FAEF /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		B90B9E74156068230001FAEF /* practiceChime.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = practiceChime.wav; sourceTree = "<group>"; };
@@ -553,6 +555,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5652FA391D8093F000EA1B8D /* Catalyze SDK */ = {
+			isa = PBXGroup;
+			children = (
+				5652FA371D8093E600EA1B8D /* Catalyze */,
+			);
+			name = "Catalyze SDK";
+			sourceTree = "<group>";
+		};
 		B90B9E73156068230001FAEF /* Audio */ = {
 			isa = PBXGroup;
 			children = (
@@ -707,6 +717,7 @@
 		B96024A2147B227B009D1A6A /* Third Party */ = {
 			isa = PBXGroup;
 			children = (
+				5652FA391D8093F000EA1B8D /* Catalyze SDK */,
 				B97959FC187F6AAF00F51532 /* TestFlightSDK2.1.3 */,
 				B97959F8187F6A8B00F51532 /* Flurry */,
 				B9465F611558BE00004E5465 /* SSToolkit */,
@@ -1310,6 +1321,7 @@
 				B99DFC71173A3435000BBB62 /* homePracticeMindfulness@2x.png in Resources */,
 				B99DFC72173A3435000BBB62 /* homeTrackYourProgress.png in Resources */,
 				B99DFC73173A3435000BBB62 /* homeTrackYourProgress@2x.png in Resources */,
+				5652FA381D8093E600EA1B8D /* Catalyze in Resources */,
 				B99DFC76173A34DA000BBB62 /* homeReminder.png in Resources */,
 				B99DFC77173A34DA000BBB62 /* homeReminder@2x.png in Resources */,
 				B9976D52173B8A4F000B3A31 /* logEntriesSortBar.png in Resources */,
