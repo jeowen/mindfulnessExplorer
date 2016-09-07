@@ -14,6 +14,8 @@
 #import "LegalViewController.h"
 //#import "TestFlight.h"
 #import "WebViewController.h"
+#import "Catalyze.h"
+#import "Heartbeat.h"
 
 @implementation AppDelegate
 
@@ -34,7 +36,7 @@
     }
 
     [contentLoader release];
-    
+      [Catalyze setApiKey:@"4f834320-9c03-4aaa-9be5-ec6d071826d5" applicationId:@"0167988a-25b9-403a-90d8-21db9af1f896"];
     return YES;
 }
 
