@@ -29,7 +29,7 @@
 		5652FB8C1D809A3B00EA1B8D /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652FB571D809A3B00EA1B8D /* AFHTTPSessionManager.m */; };
 		5652FB8D1D809A3B00EA1B8D /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652FB5A1D809A3B00EA1B8D /* AFNetworkReachabilityManager.m */; };
 		5652FB8E1D809A3B00EA1B8D /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652FB5C1D809A3B00EA1B8D /* AFSecurityPolicy.m */; };
-		5652FB8F1D809A3B00EA1B8D /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652FB5E1D809A3B00EA1B8D /* AFURLConnectionOperation.m */; };
+		5652FB8F1D809A3B00EA1B8D /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652FB5E1D809A3B00EA1B8D /* AFURLConnectionOperation.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		5652FB901D809A3B00EA1B8D /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652FB601D809A3B00EA1B8D /* AFURLRequestSerialization.m */; };
 		5652FB911D809A3B00EA1B8D /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652FB621D809A3B00EA1B8D /* AFURLResponseSerialization.m */; };
 		5652FB921D809A3B00EA1B8D /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652FB641D809A3B00EA1B8D /* AFURLSessionManager.m */; };
