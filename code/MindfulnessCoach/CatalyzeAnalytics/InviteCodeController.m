@@ -12,6 +12,7 @@
 #import "Catalyze.h"
 #import "AFNetworking.h"
 #import "Heartbeat.h"
+#import "AnalyticsConstants.h"
 
 @interface InviteCodeController()
 
