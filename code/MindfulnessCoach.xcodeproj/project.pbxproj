@@ -44,6 +44,7 @@
 		5652FB9B1D809A3B00EA1B8D /* InviteCodeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652FB741D809A3B00EA1B8D /* InviteCodeController.m */; };
 		5652FB9C1D809A3B00EA1B8D /* MyNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652FB761D809A3B00EA1B8D /* MyNavigationController.m */; };
 		5652FB9D1D809A3B00EA1B8D /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652FB781D809A3B00EA1B8D /* Reachability.m */; };
+		5652FB9F1D80D67B00EA1B8D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5652FB9E1D80D67B00EA1B8D /* Security.framework */; };
 		B90B9E6E1559BD740001FAEF /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B90B9E6D1559BD740001FAEF /* SettingsViewController.m */; };
 		B90B9E75156068230001FAEF /* practiceChime.wav in Resources */ = {isa = PBXBuildFile; fileRef = B90B9E74156068230001FAEF /* practiceChime.wav */; };
 		B90B9E77156068730001FAEF /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B90B9E76156068730001FAEF /* AudioToolbox.framework */; };
@@ -346,6 +347,7 @@
 		5652FB761D809A3B00EA1B8D /* MyNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNavigationController.m; sourceTree = "<group>"; };
 		5652FB771D809A3B00EA1B8D /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		5652FB781D809A3B00EA1B8D /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		5652FB9E1D80D67B00EA1B8D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		B90B9E6C1559BD740001FAEF /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		B90B9E6D1559BD740001FAEF /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		B90B9E74156068230001FAEF /* practiceChime.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = practiceChime.wav; sourceTree = "<group>"; };
@@ -644,6 +646,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5652FB9F1D80D67B00EA1B8D /* Security.framework in Frameworks */,
 				E0BDB8291BD65F7E00DBF17F /* AVKit.framework in Frameworks */,
 				E0BDB8271BD65ED500DBF17F /* AVFoundation.framework in Frameworks */,
 				B9976D65173B92D2000B3A31 /* MessageUI.framework in Frameworks */,
@@ -1091,6 +1094,7 @@
 		B993F0BC1477150C00B99979 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5652FB9E1D80D67B00EA1B8D /* Security.framework */,
 				E0BDB8281BD65F7E00DBF17F /* AVKit.framework */,
 				E0BDB8261BD65ED500DBF17F /* AVFoundation.framework */,
 				B9976D64173B92D2000B3A31 /* MessageUI.framework */,
