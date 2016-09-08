@@ -40,10 +40,17 @@
     return YES;
 }
 
+
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+    [Heartbeat start];
+}
+
+
 /**
  *  applicationWillResignActive
  */
 - (void)applicationWillResignActive:(UIApplication *)application {
+      [Heartbeat stop];
     [self saveClientState];
 }
 
