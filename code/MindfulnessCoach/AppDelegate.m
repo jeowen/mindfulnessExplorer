@@ -42,7 +42,7 @@
 
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    [Heartbeat start];
+   // [Heartbeat start];
 }
 
 
@@ -50,7 +50,7 @@
  *  applicationWillResignActive
  */
 - (void)applicationWillResignActive:(UIApplication *)application {
-      [Heartbeat stop];
+    //  [Heartbeat stop];
     [self saveClientState];
 }
 
