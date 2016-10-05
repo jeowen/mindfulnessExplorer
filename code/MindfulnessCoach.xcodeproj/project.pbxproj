@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5652FB791D809A3B00EA1B8D /* BackedQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652FB2B1D809A3B00EA1B8D /* BackedQueue.m */; };
-		5652FB7A1D809A3B00EA1B8D /* Address.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652FB2E1D809A3B00EA1B8D /* Address.m */; };
-		5652FB7B1D809A3B00EA1B8D /* Catalyze.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652FB301D809A3B00EA1B8D /* Catalyze.m */; };
+		5652FB7A1D809A3B00EA1B8D /* Address.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652FB2E1D809A3B00EA1B8D /* Address.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		5652FB7B1D809A3B00EA1B8D /* Catalyze.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652FB301D809A3B00EA1B8D /* Catalyze.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		5652FB7C1D809A3B00EA1B8D /* CatalyzeEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652FB331D809A3B00EA1B8D /* CatalyzeEntry.m */; };
 		5652FB7D1D809A3B00EA1B8D /* CatalyzeFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652FB351D809A3B00EA1B8D /* CatalyzeFileManager.m */; };
 		5652FB7E1D809A3B00EA1B8D /* CatalyzeHTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652FB371D809A3B00EA1B8D /* CatalyzeHTTPManager.m */; };
@@ -22,13 +22,13 @@
 		5652FB851D809A3B00EA1B8D /* Guardian.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652FB461D809A3B00EA1B8D /* Guardian.m */; };
 		5652FB861D809A3B00EA1B8D /* HealthPlan.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652FB481D809A3B00EA1B8D /* HealthPlan.m */; };
 		5652FB871D809A3B00EA1B8D /* JSONObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652FB4A1D809A3B00EA1B8D /* JSONObject.m */; };
-		5652FB881D809A3B00EA1B8D /* Language.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652FB4C1D809A3B00EA1B8D /* Language.m */; };
+		5652FB881D809A3B00EA1B8D /* Language.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652FB4C1D809A3B00EA1B8D /* Language.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		5652FB891D809A3B00EA1B8D /* AFNetworkActivityLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652FB501D809A3B00EA1B8D /* AFNetworkActivityLogger.m */; };
-		5652FB8A1D809A3B00EA1B8D /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652FB531D809A3B00EA1B8D /* AFHTTPRequestOperation.m */; };
-		5652FB8B1D809A3B00EA1B8D /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652FB551D809A3B00EA1B8D /* AFHTTPRequestOperationManager.m */; };
-		5652FB8C1D809A3B00EA1B8D /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652FB571D809A3B00EA1B8D /* AFHTTPSessionManager.m */; };
+		5652FB8A1D809A3B00EA1B8D /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652FB531D809A3B00EA1B8D /* AFHTTPRequestOperation.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		5652FB8B1D809A3B00EA1B8D /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652FB551D809A3B00EA1B8D /* AFHTTPRequestOperationManager.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		5652FB8C1D809A3B00EA1B8D /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652FB571D809A3B00EA1B8D /* AFHTTPSessionManager.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		5652FB8D1D809A3B00EA1B8D /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652FB5A1D809A3B00EA1B8D /* AFNetworkReachabilityManager.m */; };
-		5652FB8E1D809A3B00EA1B8D /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652FB5C1D809A3B00EA1B8D /* AFSecurityPolicy.m */; };
+		5652FB8E1D809A3B00EA1B8D /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652FB5C1D809A3B00EA1B8D /* AFSecurityPolicy.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		5652FB8F1D809A3B00EA1B8D /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652FB5E1D809A3B00EA1B8D /* AFURLConnectionOperation.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		5652FB901D809A3B00EA1B8D /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652FB601D809A3B00EA1B8D /* AFURLRequestSerialization.m */; };
 		5652FB911D809A3B00EA1B8D /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652FB621D809A3B00EA1B8D /* AFURLResponseSerialization.m */; };
@@ -68,7 +68,7 @@
 		B96024C9147B2963009D1A6A /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B96024C7147B2963009D1A6A /* BaseViewController.m */; };
 		B96024CE147B315A009D1A6A /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B96024CD147B315A009D1A6A /* WebViewController.m */; };
 		B96024D1147B3260009D1A6A /* WebPage.m in Sources */ = {isa = PBXBuildFile; fileRef = B96024D0147B3260009D1A6A /* WebPage.m */; };
-		B96024D4147B3A09009D1A6A /* ActionMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B96024D3147B3A09009D1A6A /* ActionMenuViewController.m */; };
+		B96024D4147B3A09009D1A6A /* ActionMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B96024D3147B3A09009D1A6A /* ActionMenuViewController.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		B96024D7147B3CA6009D1A6A /* Action.m in Sources */ = {isa = PBXBuildFile; fileRef = B96024D6147B3CA6009D1A6A /* Action.m */; };
 		B96024DA147B3CE1009D1A6A /* ContentLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = B96024D9147B3CE1009D1A6A /* ContentLoader.m */; };
 		B96024E0147B3D63009D1A6A /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B96024DD147B3D63009D1A6A /* NSDataAdditions.m */; };
