@@ -26,9 +26,9 @@
 /**
  *  dealloc
  */
-//- (void)dealloc {  
-//  [super dealloc];
-//}
+- (void)dealloc {  
+  [super dealloc];
+}
 
 #pragma mark - Property Accessors
 

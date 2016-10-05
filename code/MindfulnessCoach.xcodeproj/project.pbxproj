@@ -68,7 +68,7 @@
 		B96024C9147B2963009D1A6A /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B96024C7147B2963009D1A6A /* BaseViewController.m */; };
 		B96024CE147B315A009D1A6A /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B96024CD147B315A009D1A6A /* WebViewController.m */; };
 		B96024D1147B3260009D1A6A /* WebPage.m in Sources */ = {isa = PBXBuildFile; fileRef = B96024D0147B3260009D1A6A /* WebPage.m */; };
-		B96024D4147B3A09009D1A6A /* ActionMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B96024D3147B3A09009D1A6A /* ActionMenuViewController.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		B96024D4147B3A09009D1A6A /* ActionMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B96024D3147B3A09009D1A6A /* ActionMenuViewController.m */; };
 		B96024D7147B3CA6009D1A6A /* Action.m in Sources */ = {isa = PBXBuildFile; fileRef = B96024D6147B3CA6009D1A6A /* Action.m */; };
 		B96024DA147B3CE1009D1A6A /* ContentLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = B96024D9147B3CE1009D1A6A /* ContentLoader.m */; };
 		B96024E0147B3D63009D1A6A /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B96024DD147B3D63009D1A6A /* NSDataAdditions.m */; };
