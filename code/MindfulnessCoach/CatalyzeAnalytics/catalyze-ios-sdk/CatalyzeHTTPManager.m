@@ -73,21 +73,20 @@
 }
 
 + (void (^)(AFHTTPRequestOperation *operation, id responseObject))successBlock:(CatalyzeSuccessBlock)success {
-    return Block_copy (^(AFHTTPRequestOperation *operation, id responseObject) {
+    return ^(AFHTTPRequestOperation *operation, id responseObject) {
         if (success) {
             success([NSJSONSerialization JSONObjectWithData:responseObject options:0 error:nil]);
         }
-    });
+    };
 }
 
 + (void (^)(AFHTTPRequestOperation *operation, id responseObject))failureBlock:(CatalyzeFailureBlock)failure {
-    return Block_copy (^(AFHTTPRequestOperation *operation, NSError *error) {
+    return ^(AFHTTPRequestOperation *operation, NSError *error) {
         if (failure) {
             failure([NSJSONSerialization JSONObjectWithData:[operation responseObject] options:0 error:nil], (int)[[operation response] statusCode], error);
         }
-    });
+    };
 }
-
 + (void)updateHeaders {
     [[CatalyzeHTTPManager httpClient].requestSerializer setValue:[NSString stringWithFormat:@"Bearer %@",[[NSUserDefaults standardUserDefaults] valueForKey:kCatalyzeAuthorizationKey]] forHTTPHeaderField:kCatalyzeAuthorizationHeader];
     [[CatalyzeHTTPManager httpClient].requestSerializer setValue:[NSString stringWithFormat:@"%@", [Catalyze apiKey]] forHTTPHeaderField:kCatalyzeApiKeyHeader];
