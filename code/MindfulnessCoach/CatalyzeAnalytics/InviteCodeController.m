@@ -64,6 +64,8 @@
 
     WebPage *webPage = [[WebPage alloc] initWithFilename:kContentHTMLURLLegalIntroduction];
     [self loadWebPage:webPage];
+    [Heartbeat logEvent:@"legalIntroduction" withParameters:nil];
+    
 }
 
 - (void)confirmInviteCode {
