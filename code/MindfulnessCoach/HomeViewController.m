@@ -36,6 +36,7 @@
 - (void)handleMenuButtonWasTouched:(id)sender {
   RoundedButton *button = (RoundedButton *)sender;
   [self performActionBlockForAction:button.action];
+    NSLog(@"action is %@", button.action);
 }
 
 /**

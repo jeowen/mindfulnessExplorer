@@ -56,6 +56,7 @@
         self.client.viewedLegalScreens = YES;
         
         [[NSNotificationCenter defaultCenter] postNotificationName:@"kExitingFromLegal" object:NULL];
+        [Heartbeat logEvent:@"homeScreenFirstView" withParameters:nil];
         [self dismissViewControllerAnimated:NO completion:nil];
     } else {
         shouldLoadRequest = [super webView:webView shouldStartLoadWithRequest:request navigationType:navigationType];

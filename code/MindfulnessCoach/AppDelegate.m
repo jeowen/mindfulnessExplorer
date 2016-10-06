@@ -199,6 +199,7 @@
 
 - (void) exitingFromLegal {
     NSMutableArray *navigationViewControllers = [[NSMutableArray alloc] init];
+    [Heartbeat logEvent:@"homeScreen" withParameters:nil];
     
     // Learn
     ActionMenuViewController *learnMenuViewController = [[ActionMenuViewController alloc] initWithStyle:UITableViewStyleGrouped
