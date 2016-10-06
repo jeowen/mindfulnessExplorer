@@ -9,6 +9,7 @@
 #import "Client.h"
 #import "RoundedButton.h"
 #import "UIView+VPDView.h"
+#import "Heartbeat.h"
 
 @implementation HomeViewController
 
@@ -36,7 +37,22 @@
 - (void)handleMenuButtonWasTouched:(id)sender {
   RoundedButton *button = (RoundedButton *)sender;
   [self performActionBlockForAction:button.action];
+
+
     NSLog(@"action is %@", button.action);
+    
+    // attempting to convert NSManagedObject button.action into accessible NSDictionary
+    NSArray *keys = [[[button.action entity] attributesByName] allKeys];
+    NSDictionary *dict = [button.action dictionaryWithValuesForKeys:keys];
+    
+//    for(NSString *key in [dict allKeys]) {
+//        NSLog(@"key is %@, content is %@", key, [dict objectForKey:key]);
+//    }
+    // get title property
+    // NSString *buttonActionTitle = [dict objectForKey:title];
+    NSString *buttonActionTitle = dict[@"title"];
+    NSLog(@"I have the title!: %@", buttonActionTitle);
+    [Heartbeat logEvent:buttonActionTitle withParameters:nil];
 }
 
 /**
