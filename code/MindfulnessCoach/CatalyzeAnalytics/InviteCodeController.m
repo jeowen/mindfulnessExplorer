@@ -49,8 +49,13 @@
     if ([lastPathComponent isEqualToString:kContentHTMLURLViewIntroductionScreen]) {
         [self confirmInviteCode];
     } else if ([lastPathComponent isEqualToString:kContentHTMLURLViewHomeScreen]) {
+//        self.client.viewedLegalScreens = YES;
+//        NSLog(@"tapped start from legalIntroduction");
+//        
+//        [self dismissViewControllerAnimated:NO completion:nil];
         self.client.viewedLegalScreens = YES;
-
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"kExitingFromLegal" object:NULL];
         [self dismissViewControllerAnimated:NO completion:nil];
     } else {
         shouldLoadRequest = [super webView:webView shouldStartLoadWithRequest:request navigationType:navigationType];
