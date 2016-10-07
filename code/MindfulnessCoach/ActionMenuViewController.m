@@ -86,8 +86,7 @@
     // NSString *buttonActionTitle = [dict objectForKey:title];
     NSString *learnTopic = dict[@"title"];
     NSLog(@"I have the Learn Content: %@", learnTopic);
-    NSLog(@"CATALYZE...CATALYZE...CATALYZE...");
-    
+    NSLog(@"CATALYZE...CATALYZE...CATALYZE...");    
     [Heartbeat logEvent:learnTopic withParameters:nil];
 }
 

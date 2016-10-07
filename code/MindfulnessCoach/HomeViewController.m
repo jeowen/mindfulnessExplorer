@@ -48,7 +48,9 @@
     // get title property
     // NSString *buttonActionTitle = [dict objectForKey:title];
     NSString *buttonActionTitle = dict[@"title"];
-    NSLog(@"I have the title!: %@", buttonActionTitle);
+    NSLog(@"The dictionary for displaying main content area is: %@", dict);
+    
+    NSLog(@"I have the name of the button!: %@", buttonActionTitle);
     NSLog(@"CATALYZE...CATALYZE...CATALYZE...CATALYZE...CATALYZE");
     [Heartbeat logEvent:buttonActionTitle withParameters:nil];
 }
