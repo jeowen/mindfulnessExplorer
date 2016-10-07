@@ -295,7 +295,9 @@
 - (void)performActionBlockForAction:(Action *)action {
   ActionSelectedBlock actionBlock = [self.actionBlocks objectForKey:action.type];
   if (actionBlock != nil) {
-    actionBlock(action);
+    
+      actionBlock(action);
+      
   }
 }
 

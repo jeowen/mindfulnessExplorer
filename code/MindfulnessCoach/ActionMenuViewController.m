@@ -7,6 +7,7 @@
 #import "Client.h"
 #import "AppConstants.h"
 #import "UIFactory.h"
+#import "Heartbeat.h"
 
 @implementation ActionMenuViewController
 
@@ -73,6 +74,21 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   Action *selectedAction = [self.fetchedResultsController objectAtIndexPath:indexPath];
   [self performActionBlockForAction:selectedAction];
+    
+  // specific Learn topic was selected
+  // NSLog(@"selected learn topic with action: %@", selectedAction);
+    
+    // attempting to convert NSManagedObject button.action into accessible NSDictionary
+    NSArray *keys = [[[selectedAction entity] attributesByName] allKeys];
+    NSDictionary *dict = [selectedAction dictionaryWithValuesForKeys:keys];
+    
+    // get title property
+    // NSString *buttonActionTitle = [dict objectForKey:title];
+    NSString *learnTopic = dict[@"title"];
+    NSLog(@"I have the Learn Content: %@", learnTopic);
+    NSLog(@"CATALYZE...CATALYZE...CATALYZE...");
+    
+    [Heartbeat logEvent:learnTopic withParameters:nil];
 }
 
 #pragma mark - Instance Methods

@@ -45,13 +45,11 @@
     NSArray *keys = [[[button.action entity] attributesByName] allKeys];
     NSDictionary *dict = [button.action dictionaryWithValuesForKeys:keys];
     
-//    for(NSString *key in [dict allKeys]) {
-//        NSLog(@"key is %@, content is %@", key, [dict objectForKey:key]);
-//    }
     // get title property
     // NSString *buttonActionTitle = [dict objectForKey:title];
     NSString *buttonActionTitle = dict[@"title"];
     NSLog(@"I have the title!: %@", buttonActionTitle);
+    NSLog(@"CATALYZE...CATALYZE...CATALYZE...CATALYZE...CATALYZE");
     [Heartbeat logEvent:buttonActionTitle withParameters:nil];
 }
 
