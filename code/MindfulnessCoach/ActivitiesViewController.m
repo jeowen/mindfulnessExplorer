@@ -10,6 +10,7 @@
 #import "NSString+VPDString.h"
 #import "UIFactory.h"
 #import "UIView+VPDView.h"
+#import "Heartbeat.h"
 
 @implementation ActivitiesViewController
 
@@ -196,6 +197,18 @@
  */
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   Activity *selectedActivity = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    
+  // ==> ADDING HEARTBEAT
+    NSMutableDictionary *heartBeatData = [NSMutableDictionary dictionary];
+    [heartBeatData setValue:selectedActivity.exercise.title forKey:@"Exercise Type"];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];
+    [heartBeatData setValue:[formatter stringFromDate:selectedActivity.date] forKey:@"Log Date"];
+    [Heartbeat logEvent:@"ViewingActivityLog" withParameters:heartBeatData];
+    NSLog(@"Heartbeat... logEvent:Viewing Activity Log");
+    
+    
+  // ==/ COMPLETED HEARTBEAT
   ActivityEditViewController *editViewController = [[ActivityEditViewController alloc] initWithStyle:UITableViewStyleGrouped
                                                                                               client:self.client 
                                                                                             activity:selectedActivity];
@@ -213,7 +226,8 @@
   ActivityEditViewController *editViewController = [[ActivityEditViewController alloc] initWithStyle:UITableViewStyleGrouped
                                                                                               client:self.client
                                                                                             activity:nil];
-  
+  [Heartbeat logEvent:@"CreateLogEntry" withParameters:nil];
+    NSLog(@"HEARTBEAT logEvent:  class:ActivitiesViewController.m, logEvent:CreateLogEntry     -->-->--->-->-->--->");
   [self presentModalNavigationControllerWithViewController:editViewController dismissTitle:NSLocalizedString(@"Cancel", nil)];
   [editViewController release];
 }

@@ -8,6 +8,7 @@
 #import "NSDate+VPDDate.h"
 #import "UIFactory.h"
 #import "UIView+VPDView.h"
+#import "Heartbeat.h"
 
 #define kBlackoutShadowKeyStartDate @"startDate"
 #define kBlackoutShadowKeyEndDate @"endDate"

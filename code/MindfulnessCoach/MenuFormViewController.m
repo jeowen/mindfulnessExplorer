@@ -6,6 +6,7 @@
 #import "Client.h"
 #import "TextFieldFormViewController.h"
 #import "UIFactory.h"
+#import "Heartbeat.h"
 
 @implementation MenuFormViewController
 

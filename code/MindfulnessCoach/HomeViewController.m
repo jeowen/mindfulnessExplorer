@@ -59,6 +59,9 @@
  *  handleAboutButtonTouched
  */
 - (void)handleAboutButtonTouched:(id)sender {
+    [Heartbeat logEvent:@"AboutButtonTouched" withParameters:nil];
+    NSLog(@"Heartbeat .. HomeViewController.m logEvent:AboutButtonTouched  -- > -- > --- > --> --> --->-->-->");
+    
   ButtonMenuViewController *aboutMenuViewController = [[ButtonMenuViewController alloc] initWithClient:self.client];
   aboutMenuViewController.action = [self.client rootActionForGroup:kActionGroupAbout];
   

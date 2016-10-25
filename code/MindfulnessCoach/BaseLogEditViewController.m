@@ -6,6 +6,7 @@
 #import "EmailBuilder.h"
 #import "UIFactory.h"
 #import "UIView+VPDView.h"
+#import "Heartbeat.h"
 
 @implementation BaseLogEditViewController
 
@@ -52,6 +53,9 @@
  *  handleEmailLogEntryButtonTapped
  */
 - (void)handleEmailLogEntryButtonTapped:(id)sender {
+  [Heartbeat logEvent:@"EmailLogEntry" withParameters:nil];
+  NSLog(@"Heartbeat ... .. ... BaseLogEditViewController.m method:handleEmailLogEntryButtonTapped logEvent:EmailLogEntry");
+    
   NSString *alertTitle = NSLocalizedString(@"Email Log Entry", nil);
   NSString *alertMessage = NSLocalizedString(@"To protect your privacy, send this email only to yourself at a secure "
                                              "personal account. Do not send this email to your healthcare provider or "
@@ -70,6 +74,9 @@
  *  handleDeleteLogEntryButtonTapped
  */
 - (void)handleDeleteLogEntryButtonTapped:(id)sender {
+    [Heartbeat logEvent:@"DeleteLogEntry" withParameters:nil];
+    NSLog(@"Heartbeat ... .. ... BaseLogEditViewController.m method:handleDeleteLogEntryButtonTapped logEvent:DeleteLogEntry");
+    
   NSString *actionSheetTitle = NSLocalizedString(@"Are you sure you want to permanently delete this log entry?", nil);
   
   UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:actionSheetTitle
@@ -88,6 +95,24 @@
  *  mailCmoposeController:didFinishWithResult:error
  */
 - (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
+    
+    if(result == MFMailComposeResultSent) {
+        [Heartbeat logEvent:@"LogEmailSent" withParameters:nil];
+        NSLog(@"Heartbeat ... .. ... BaseLogEditViewController.m logEvent:LogEmailSent");
+    }
+    if(result == MFMailComposeResultCancelled) {
+        [Heartbeat logEvent:@"LogEmailCancelled" withParameters:nil];
+        NSLog(@"Heartbeat ... .. ... BaseLogEditViewController.m logEvent:LogEmailCancelled");
+    }
+    if(result == MFMailComposeResultSaved) {
+        [Heartbeat logEvent:@"LogEmailSavedForLater" withParameters:nil];
+        NSLog(@"Heartbeat ... .. ... BaseLogEditViewController.m logEvent:LogEmailSavedForLater");
+    }
+    if(result == MFMailComposeResultFailed) {
+        [Heartbeat logEvent:@"LogEmailFailed" withParameters:nil];
+        NSLog(@"Heartbeat ... .. ... BaseLogEditViewController.m  logEvent:LogEmailFailed");
+    }
+    
   [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -98,7 +123,11 @@
  */
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
   if (buttonIndex == 0) {
+      [Heartbeat logEvent:@"ConfirmDeleteLog" withParameters:nil];
+      NSLog(@"Heartbeat ... .. ... BaseLogEditViewController.m logEvent:ConfirmDeleteLog");
     [super handleCancelButtonTapped:nil];
+      
+
     [self.managedObject.managedObjectContext deleteObject:self.managedObject];
   }
 }
@@ -110,6 +139,9 @@
  */
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
   if (buttonIndex == 1 && self.emailBuilder) {
+       [Heartbeat logEvent:@"ContinueEmailLog" withParameters:nil];
+      NSLog(@"Heartbeat .. ... .. BaseLogEditViewController.m logEvent:ContinueEmailLog");
+      
     MFMailComposeViewController *mailComposeViewController = [[MFMailComposeViewController alloc] init];
     [mailComposeViewController setMailComposeDelegate:self];
     [mailComposeViewController setSubject:self.emailBuilder.subject];

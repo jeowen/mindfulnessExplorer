@@ -1384,7 +1384,7 @@
 				LastUpgradeCheck = 0640;
 				TargetAttributes = {
 					B993F0B81477150C00B99979 = {
-						DevelopmentTeam = AUH6TP3T4J;
+						DevelopmentTeam = 7P8HEW4494;
 					};
 				};
 			};
@@ -1692,8 +1692,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Gabriele Palma (4PXD33K2CD)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Gabriele Palma (4PXD33K2CD)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1717,8 +1717,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
-				PROVISIONING_PROFILE = "7cd16da9-3971-4811-898f-32ba0940004e";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "7cd16da9-3971-4811-898f-32ba0940004e";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1734,8 +1734,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Gabriele Palma (AUH6TP3T4J)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Gabriele Palma (AUH6TP3T4J)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1752,8 +1752,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "-ObjC";
-				PROVISIONING_PROFILE = "7cd16da9-3971-4811-898f-32ba0940004e";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "7cd16da9-3971-4811-898f-32ba0940004e";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1767,6 +1767,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 7P8HEW4494;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MindfulnessCoach/MindfulnessCoach-Prefix.pch";
 				GCC_THUMB_SUPPORT = NO;
@@ -1776,6 +1777,7 @@
 					"$(inherited)",
 					"./**",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = explorer.mindfulness;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -1790,6 +1792,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 7P8HEW4494;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MindfulnessCoach/MindfulnessCoach-Prefix.pch";
 				GCC_THUMB_SUPPORT = NO;
@@ -1799,6 +1802,7 @@
 					"$(inherited)",
 					"./**",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = explorer.mindfulness;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;

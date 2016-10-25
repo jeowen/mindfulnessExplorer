@@ -9,6 +9,7 @@
 #import "MyNavigationController.h"
 #import "Heartbeat.h"
 #import "AnalyticsConstants.h"
+#import "Heartbeat.h"
 
 @interface MyNavigationController ()
 
@@ -33,7 +34,7 @@
     if (!title) {
         title = @"Unknown";
     }
-    [Heartbeat logEvent:kEventNavBack withParameters:@{@"From": title}];
+    [Heartbeat logEvent:@"NavBack" withParameters:@{@"NavBackFrom": title}];
 }
 
 @end

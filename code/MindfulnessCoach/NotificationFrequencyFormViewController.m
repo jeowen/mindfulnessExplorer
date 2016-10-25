@@ -5,6 +5,7 @@
 #import "NotificationFrequencyFormViewController.h"
 #import "NSString+VPDString.h"
 #import "UIFactory.h"
+#import "Heartbeat.h"
 
 @implementation NotificationFrequencyFormViewController
 
@@ -122,6 +123,8 @@
   if (self.selectedIndexPath != nil) {
     [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:self.selectedIndexPath] withRowAnimation:UITableViewRowAnimationNone];
   }
+     [Heartbeat logEvent:@"NotificationSetFrequency" withParameters:@{@"FrequencyNumber": frequencyNumber}];
+    NSLog(@"Heartbeat .. ... logEvent:NotificationSetFrequency, value:%@", frequencyNumber);
 }
 
 @end

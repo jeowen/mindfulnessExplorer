@@ -7,6 +7,7 @@
 #import "Exercise.h"
 #import "ExerciseViewController.h"
 #import "UIFactory.h"
+#import "Heartbeat.h"
 
 @implementation ExercisesViewController
 
@@ -59,6 +60,12 @@
  */
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   Exercise *selectedExercise = (Exercise *)[self.fetchedResultsController objectAtIndexPath:indexPath];
+  
+  NSString *exerciseTitle = selectedExercise.title;
+  NSString *key = [NSString stringWithFormat:@"SelectedExercise%@", exerciseTitle];
+    [Heartbeat logEvent:key withParameters:nil];
+    NSLog(@"Heartbeat .. ... logEvent:%@", key);
+    
   ExerciseViewController *exerciseViewController = [[ExerciseViewController alloc] initWithClient:self.client exercise:selectedExercise];
   [self.navigationController pushViewController:exerciseViewController animated:YES];
   [exerciseViewController release];

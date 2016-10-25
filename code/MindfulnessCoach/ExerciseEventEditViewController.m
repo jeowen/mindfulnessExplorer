@@ -9,6 +9,7 @@
 #import "NotificationFrequencyFormViewController.h"
 #import "NSString+VPDString.h"
 #import "UIFactory.h"
+#import "Heartbeat.h"
 
 @implementation ExerciseEventEditViewController
 
@@ -139,6 +140,9 @@
   
   switch (indexPath.section) {
     case kExerciseEventTableViewSectionExercise: {
+      [Heartbeat logEvent:@"NavSelectActivity" withParameters:nil];
+        NSLog(@"Heartbeat .. ... ExerciseEventEditViewController.m logEvent:NavSelectActivity");
+        
       formViewController = [[MenuFormViewController alloc] initWithStyle:UITableViewStyleGrouped 
                                                                   client:self.client 
                                                               fieldTitle:NSLocalizedString(@"Exercise", nil)];
@@ -184,6 +188,29 @@
  *  eventEditViewController:didCompleteWithAction
  */
 - (void)eventEditViewController:(EKEventEditViewController *)controller didCompleteWithAction:(EKEventEditViewAction)action {
+    
+    if (action == EKEventEditViewActionSaved) {
+        
+        NSCalendar *cal = [NSCalendar currentCalendar];
+        cal.timeZone = [NSTimeZone timeZoneWithAbbreviation:@"UTC"];
+        unsigned flags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
+        NSDateComponents *components = [cal components:flags fromDate:[NSDate date]];
+        NSString *timestamp = [NSString stringWithFormat:@"%ld-%02ld-%02ld'T'%02ld:%02ld:%02ld", components.year, components.month, components.day, components.hour, components.minute, components.second];
+        
+        NSMutableDictionary *heartBeatData = [NSMutableDictionary dictionary];
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"yy-MM-dd'T'HH:mm:ss'Z'"];
+        [heartBeatData setValue:[formatter stringFromDate:controller.event.startDate] forKey:@"Start Date"];
+        [heartBeatData setValue:controller.event.title forKey:@"Event Title"];
+        [heartBeatData setValue:timestamp forKey:@"Event Created"];
+        [Heartbeat logEvent:@"SuccessfullyCreatedEvent" withParameters:heartBeatData];
+        NSLog(@"Heartbeat .. .. ExerciseEditViewController.m logEvent:SuccessfullyCreatedEvent");
+    }
+    else if (action == EKEventEditViewActionCanceled) {
+        [Heartbeat logEvent:@"CalendarEventCancelled" withParameters:nil];
+        NSLog(@"Heartbeat .. .. ExerciseEditViewController.m logEvent:CalendarEventCancelled");
+    }
+    
   // We're not actively doing anything with the newly created event, so just dismiss the view.
   [controller dismissViewControllerAnimated:YES completion:nil];
 }
@@ -203,13 +230,18 @@
  */
 - (void)handleAddToCalendarButtonTapped:(id)sender {
   EKEventStore *eventStore = [[EKEventStore alloc] init];
-  
+   [Heartbeat logEvent:@"NavAddActivity" withParameters:nil];
+    NSLog(@"Heartbeat .. ... logEvent:NavAddActivity");
+    
   if([eventStore respondsToSelector:@selector(requestAccessToEntityType:completion:)]) {
     [eventStore requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error) {
       dispatch_sync(dispatch_get_main_queue(), ^(void) {
         if (granted) {
           [self showEventControllerWithEventStore:eventStore];
         } else {
+            [Heartbeat logEvent:@"CalendarAccessDenied" withParameters:nil];
+            NSLog(@"Heartbeat .. ... logEvent:CalendarAccessDenied");
+            
           NSString *alertMessage = NSLocalizedString(@"Mindfulness Coach does not have access to your calendars. "
                                                      "You can enable access in Privacy Settings.", nil);
           
