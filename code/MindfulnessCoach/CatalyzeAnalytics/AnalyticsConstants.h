@@ -72,6 +72,7 @@
 #define kEventNavLearnPTSDSymptomsDuringPractice @"PTSD Symtoms During Practice"
 
 //Practice Activities
+#define kEventNavPracticeAwarenessOfBreath @"Awareness of Breath"
 #define kEventNavPracticeMindfulBreathing @"Mindful Breathing"
 #define kEventNavPracticeMindfulWalking @"Mindful Walking"
 #define kEventNavPracticeMindfulEating @"Mindful Eating"

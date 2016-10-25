@@ -45,13 +45,19 @@
 		5652FB9C1D809A3B00EA1B8D /* MyNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652FB761D809A3B00EA1B8D /* MyNavigationController.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		5652FB9D1D809A3B00EA1B8D /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652FB781D809A3B00EA1B8D /* Reachability.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		5652FB9F1D80D67B00EA1B8D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5652FB9E1D80D67B00EA1B8D /* Security.framework */; };
-		56D2AA401DBF2A9800BABE72 /* practiceAwarenessOfBreath.html in Resources */ = {isa = PBXBuildFile; fileRef = 56D2AA3F1DBF2A9800BABE72 /* practiceAwarenessOfBreath.html */; };
+		5681EA0C1DBF345C00EEDC26 /* practiceBodyScanFemale.html in Resources */ = {isa = PBXBuildFile; fileRef = 5681EA071DBF345C00EEDC26 /* practiceBodyScanFemale.html */; };
+		5681EA0D1DBF345C00EEDC26 /* practiceBodyScanMale.html in Resources */ = {isa = PBXBuildFile; fileRef = 5681EA081DBF345C00EEDC26 /* practiceBodyScanMale.html */; };
+		5681EA0E1DBF345C00EEDC26 /* practiceMindfulMovement.html in Resources */ = {isa = PBXBuildFile; fileRef = 5681EA091DBF345C00EEDC26 /* practiceMindfulMovement.html */; };
+		5681EA0F1DBF345C00EEDC26 /* practiceMountain.html in Resources */ = {isa = PBXBuildFile; fileRef = 5681EA0A1DBF345C00EEDC26 /* practiceMountain.html */; };
+		5681EA101DBF345C00EEDC26 /* practiceThreeMinuteMindfulness.html in Resources */ = {isa = PBXBuildFile; fileRef = 5681EA0B1DBF345C00EEDC26 /* practiceThreeMinuteMindfulness.html */; };
+		5681EA121DBF35DB00EEDC26 /* learnBenefitsForDiabetes.html in Resources */ = {isa = PBXBuildFile; fileRef = 5681EA111DBF35DB00EEDC26 /* learnBenefitsForDiabetes.html */; };
 		56D2AA531DBF2D0600BABE72 /* AwarenessOfBreath.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 56D2AA4D1DBF2D0600BABE72 /* AwarenessOfBreath.mp4 */; };
 		56D2AA541DBF2D0600BABE72 /* BodyScanFemale.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 56D2AA4E1DBF2D0600BABE72 /* BodyScanFemale.mp4 */; };
 		56D2AA551DBF2D0600BABE72 /* bodyscanMale.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 56D2AA4F1DBF2D0600BABE72 /* bodyscanMale.mp4 */; };
 		56D2AA561DBF2D0600BABE72 /* MindfulMovement.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 56D2AA501DBF2D0600BABE72 /* MindfulMovement.mp4 */; };
 		56D2AA571DBF2D0600BABE72 /* Mountain.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 56D2AA511DBF2D0600BABE72 /* Mountain.mp4 */; };
 		56D2AA581DBF2D0600BABE72 /* ThreeMinuteMindfulness.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 56D2AA521DBF2D0600BABE72 /* ThreeMinuteMindfulness.mp4 */; };
+		56D2AA5A1DBF2E0500BABE72 /* practiceAwarenessOfBreath.html in Resources */ = {isa = PBXBuildFile; fileRef = 56D2AA591DBF2E0500BABE72 /* practiceAwarenessOfBreath.html */; };
 		B90B9E6E1559BD740001FAEF /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B90B9E6D1559BD740001FAEF /* SettingsViewController.m */; };
 		B90B9E75156068230001FAEF /* practiceChime.wav in Resources */ = {isa = PBXBuildFile; fileRef = B90B9E74156068230001FAEF /* practiceChime.wav */; };
 		B90B9E77156068730001FAEF /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B90B9E76156068730001FAEF /* AudioToolbox.framework */; };
@@ -355,13 +361,19 @@
 		5652FB771D809A3B00EA1B8D /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		5652FB781D809A3B00EA1B8D /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		5652FB9E1D80D67B00EA1B8D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		56D2AA3F1DBF2A9800BABE72 /* practiceAwarenessOfBreath.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = practiceAwarenessOfBreath.html; sourceTree = "<group>"; };
+		5681EA071DBF345C00EEDC26 /* practiceBodyScanFemale.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = practiceBodyScanFemale.html; sourceTree = "<group>"; };
+		5681EA081DBF345C00EEDC26 /* practiceBodyScanMale.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = practiceBodyScanMale.html; sourceTree = "<group>"; };
+		5681EA091DBF345C00EEDC26 /* practiceMindfulMovement.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = practiceMindfulMovement.html; sourceTree = "<group>"; };
+		5681EA0A1DBF345C00EEDC26 /* practiceMountain.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = practiceMountain.html; sourceTree = "<group>"; };
+		5681EA0B1DBF345C00EEDC26 /* practiceThreeMinuteMindfulness.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = practiceThreeMinuteMindfulness.html; sourceTree = "<group>"; };
+		5681EA111DBF35DB00EEDC26 /* learnBenefitsForDiabetes.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = learnBenefitsForDiabetes.html; sourceTree = "<group>"; };
 		56D2AA4D1DBF2D0600BABE72 /* AwarenessOfBreath.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = AwarenessOfBreath.mp4; path = MindfulnessCoach/Resources/Video/AwarenessOfBreath.mp4; sourceTree = SOURCE_ROOT; };
 		56D2AA4E1DBF2D0600BABE72 /* BodyScanFemale.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = BodyScanFemale.mp4; path = MindfulnessCoach/Resources/Video/BodyScanFemale.mp4; sourceTree = SOURCE_ROOT; };
 		56D2AA4F1DBF2D0600BABE72 /* bodyscanMale.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = bodyscanMale.mp4; path = MindfulnessCoach/Resources/Video/bodyscanMale.mp4; sourceTree = SOURCE_ROOT; };
 		56D2AA501DBF2D0600BABE72 /* MindfulMovement.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = MindfulMovement.mp4; path = MindfulnessCoach/Resources/Video/MindfulMovement.mp4; sourceTree = SOURCE_ROOT; };
 		56D2AA511DBF2D0600BABE72 /* Mountain.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = Mountain.mp4; path = MindfulnessCoach/Resources/Video/Mountain.mp4; sourceTree = SOURCE_ROOT; };
 		56D2AA521DBF2D0600BABE72 /* ThreeMinuteMindfulness.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = ThreeMinuteMindfulness.mp4; path = MindfulnessCoach/Resources/Video/ThreeMinuteMindfulness.mp4; sourceTree = SOURCE_ROOT; };
+		56D2AA591DBF2E0500BABE72 /* practiceAwarenessOfBreath.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = practiceAwarenessOfBreath.html; sourceTree = "<group>"; };
 		B90B9E6C1559BD740001FAEF /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		B90B9E6D1559BD740001FAEF /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		B90B9E74156068230001FAEF /* practiceChime.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = practiceChime.wav; sourceTree = "<group>"; };
@@ -989,7 +1001,13 @@
 		B96024F3147B7E6C009D1A6A /* HTML */ = {
 			isa = PBXGroup;
 			children = (
-				56D2AA3F1DBF2A9800BABE72 /* practiceAwarenessOfBreath.html */,
+				5681EA111DBF35DB00EEDC26 /* learnBenefitsForDiabetes.html */,
+				5681EA071DBF345C00EEDC26 /* practiceBodyScanFemale.html */,
+				5681EA081DBF345C00EEDC26 /* practiceBodyScanMale.html */,
+				5681EA091DBF345C00EEDC26 /* practiceMindfulMovement.html */,
+				5681EA0A1DBF345C00EEDC26 /* practiceMountain.html */,
+				5681EA0B1DBF345C00EEDC26 /* practiceThreeMinuteMindfulness.html */,
+				56D2AA591DBF2E0500BABE72 /* practiceAwarenessOfBreath.html */,
 				B960250E147B8F3F009D1A6A /* aboutMindfulnessCoach.html */,
 				B960250F147B8F3F009D1A6A /* aboutProjectPartners.html */,
 				B9602510147B8F3F009D1A6A /* aboutProjectTeam.html */,
@@ -1467,6 +1485,7 @@
 				B989FDAD15033C010028D333 /* Clouds.mp4 in Resources */,
 				B989FDAE15033C010028D333 /* Discomfort.mp4 in Resources */,
 				5652FB981D809A3B00EA1B8D /* CMASetup.py in Resources */,
+				5681EA0C1DBF345C00EEDC26 /* practiceBodyScanFemale.html in Resources */,
 				B989FDAF15033C010028D333 /* Eating.mp4 in Resources */,
 				B989FDB015033C010028D333 /* Leaves.mp4 in Resources */,
 				B989FDB8150401C00028D333 /* BodyScan.mp4 in Resources */,
@@ -1508,6 +1527,7 @@
 				B99DFC26173A305B000BBB62 /* practiceMindfulEating.png in Resources */,
 				B99DFC27173A305B000BBB62 /* practiceMindfulEating@2x.png in Resources */,
 				B99DFC28173A305B000BBB62 /* practiceMindfulListening.png in Resources */,
+				5681EA0F1DBF345C00EEDC26 /* practiceMountain.html in Resources */,
 				B99DFC29173A305B000BBB62 /* practiceMindfulListening@2x.png in Resources */,
 				56D2AA561DBF2D0600BABE72 /* MindfulMovement.mp4 in Resources */,
 				B99DFC2A173A305B000BBB62 /* practiceMindfulLooking.png in Resources */,
@@ -1521,6 +1541,7 @@
 				B99DFC32173A305B000BBB62 /* remindersHelpPointingFigure.png in Resources */,
 				B99DFC33173A305B000BBB62 /* remindersHelpPointingFigure@2x.png in Resources */,
 				B99DFC34173A305B000BBB62 /* backgroundGrayStripped.png in Resources */,
+				5681EA101DBF345C00EEDC26 /* practiceThreeMinuteMindfulness.html in Resources */,
 				B99DFC35173A305B000BBB62 /* backgroundGrayStripped@2x.png in Resources */,
 				B99DFC36173A305B000BBB62 /* backgroundToolbar.png in Resources */,
 				B99DFC37173A305B000BBB62 /* backgroundToolbar@2x.png in Resources */,
@@ -1535,7 +1556,9 @@
 				B99DFC40173A305B000BBB62 /* buttonBackgroundRedNormal.png in Resources */,
 				B99DFC41173A305B000BBB62 /* buttonBackgroundRedNormal@2x.png in Resources */,
 				B99DFC42173A305B000BBB62 /* buttonFavorites.png in Resources */,
+				56D2AA5A1DBF2E0500BABE72 /* practiceAwarenessOfBreath.html in Resources */,
 				B99DFC43173A305B000BBB62 /* buttonFavorites@2x.png in Resources */,
+				5681EA0D1DBF345C00EEDC26 /* practiceBodyScanMale.html in Resources */,
 				B99DFC44173A305B000BBB62 /* buttonFavoritesSelected.png in Resources */,
 				B99DFC45173A305B000BBB62 /* buttonFavoritesSelected@2x.png in Resources */,
 				B99DFC46173A305B000BBB62 /* placeholderSlug.png in Resources */,
@@ -1571,7 +1594,6 @@
 				B99DFC70173A3435000BBB62 /* homePracticeMindfulness.png in Resources */,
 				B99DFC71173A3435000BBB62 /* homePracticeMindfulness@2x.png in Resources */,
 				B99DFC72173A3435000BBB62 /* homeTrackYourProgress.png in Resources */,
-				56D2AA401DBF2A9800BABE72 /* practiceAwarenessOfBreath.html in Resources */,
 				B99DFC73173A3435000BBB62 /* homeTrackYourProgress@2x.png in Resources */,
 				B99DFC76173A34DA000BBB62 /* homeReminder.png in Resources */,
 				B99DFC77173A34DA000BBB62 /* homeReminder@2x.png in Resources */,
@@ -1583,6 +1605,8 @@
 				B9976D57173B8A4F000B3A31 /* logEntriesSortBarSortByDate@2x.png in Resources */,
 				B9976D58173B8A4F000B3A31 /* logEntriesSortBarSortByDateAsc.png in Resources */,
 				B9976D59173B8A4F000B3A31 /* logEntriesSortBarSortByDateAsc@2x.png in Resources */,
+				5681EA121DBF35DB00EEDC26 /* learnBenefitsForDiabetes.html in Resources */,
+				5681EA0E1DBF345C00EEDC26 /* practiceMindfulMovement.html in Resources */,
 				B9976D5A173B8A4F000B3A31 /* logEntriesSortBarSortByDateDesc.png in Resources */,
 				B9976D5B173B8A4F000B3A31 /* logEntriesSortBarSortByDateDesc@2x.png in Resources */,
 				B9976D5C173B8A4F000B3A31 /* logEntriesSortBarSortByDescriptor.png in Resources */,
