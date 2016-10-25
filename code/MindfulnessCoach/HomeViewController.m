@@ -9,6 +9,7 @@
 #import "Client.h"
 #import "RoundedButton.h"
 #import "UIView+VPDView.h"
+#import "Heartbeat.h"
 
 @implementation HomeViewController
 
@@ -36,12 +37,31 @@
 - (void)handleMenuButtonWasTouched:(id)sender {
   RoundedButton *button = (RoundedButton *)sender;
   [self performActionBlockForAction:button.action];
+
+
+    NSLog(@"action is %@", button.action);
+    
+    // attempting to convert NSManagedObject button.action into accessible NSDictionary
+    NSArray *keys = [[[button.action entity] attributesByName] allKeys];
+    NSDictionary *dict = [button.action dictionaryWithValuesForKeys:keys];
+    
+    // get title property
+    // NSString *buttonActionTitle = [dict objectForKey:title];
+    NSString *buttonActionTitle = dict[@"title"];
+    NSLog(@"The dictionary for displaying main content area is: %@", dict);
+    
+    NSLog(@"I have the name of the button!: %@", buttonActionTitle);
+    NSLog(@"CATALYZE...CATALYZE...CATALYZE...CATALYZE...CATALYZE");
+    [Heartbeat logEvent:buttonActionTitle withParameters:nil];
 }
 
 /**
  *  handleAboutButtonTouched
  */
 - (void)handleAboutButtonTouched:(id)sender {
+    [Heartbeat logEvent:@"AboutButtonTouched" withParameters:nil];
+    NSLog(@"Heartbeat .. HomeViewController.m logEvent:AboutButtonTouched  -- > -- > --- > --> --> --->-->-->");
+    
   ButtonMenuViewController *aboutMenuViewController = [[ButtonMenuViewController alloc] initWithClient:self.client];
   aboutMenuViewController.action = [self.client rootActionForGroup:kActionGroupAbout];
   

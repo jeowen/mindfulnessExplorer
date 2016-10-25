@@ -8,6 +8,7 @@
 #import "Client.h"
 #import "AppConstants.h"
 #import "UIFactory.h"
+#import "Heartbeat.h"
 
 @implementation BlackoutsViewController
 
@@ -60,6 +61,11 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
   if (editingStyle == UITableViewCellEditingStyleDelete) {
     Blackout *blackout = [self.fetchedResultsController objectAtIndexPath:indexPath];
+      NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+      [formatter setDateFormat:@"yy-MM-dd'T'HH:mm:ss'Z'"];
+      [Heartbeat logEvent:@"DeleteBlackoutSpan" withParameters:@{@"From": [formatter stringFromDate:blackout.startDate], @"through": [formatter stringFromDate:blackout.endDate]}];
+      NSLog(@"Heartbeat ... .. ... BlackoutsViewController.m logEvent:DeleteBlackoutSpan");
+      
     [self.client deleteObject:blackout];
   }
 }
@@ -111,6 +117,8 @@
  *  handleAddBlackoutButtonTapped
  */
 - (void)handleAddBlackoutButtonTapped:(id)sender {
+    [Heartbeat logEvent:@"AddBlackoutButton" withParameters:nil];
+    NSLog(@"Heartbeat ... .. ... BlackoutsViewController.m logEvent:AddBlackoutButton");
   BlackoutEditViewController *editViewController = [[BlackoutEditViewController alloc] initWithStyle:UITableViewStyleGrouped 
                                                                                               client:self.client 
                                                                                             blackout:nil];

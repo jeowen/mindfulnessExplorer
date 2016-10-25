@@ -13,6 +13,7 @@
 #import "NSString+VPDString.h"
 #import "TextViewFormViewController.h"
 #import "UIFactory.h"
+#import "Heartbeat.h"
 
 @implementation ActivityEditViewController
 
@@ -91,6 +92,8 @@
   
   switch (indexPath.section) {
     case kActivityTableViewSectionExercise: {
+      [Heartbeat logEvent:@"ChangingLoggedExercise" withParameters:nil];
+        NSLog(@"Heartbeat ... ActivityEditViewController.m, logEvent:ChangingLoggedExercise");
       cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
       cell.textLabel.text = NSLocalizedString(@"Exercise", nil);
       cell.detailTextLabel.text = self.activity.exercise.title;
@@ -101,6 +104,9 @@
       self.dateFormatter.dateStyle = NSDateFormatterLongStyle;
       self.dateFormatter.timeStyle = NSDateFormatterNoStyle;
       
+        [Heartbeat logEvent:@"ChangingLoggedDate" withParameters:nil];
+        NSLog(@"Heartbeat ... ActivityEditViewController.m, logEvent:ChangingLoggedDate");
+        
       cell.textLabel.text = NSLocalizedString(@"Date", nil);
       cell.detailTextLabel.text = [self.dateFormatter stringFromDate:self.activity.date];
       break;
@@ -110,12 +116,19 @@
       self.dateFormatter.dateStyle = NSDateFormatterNoStyle;
       self.dateFormatter.timeStyle = NSDateFormatterShortStyle;
       
+        
+        [Heartbeat logEvent:@"ChangingLoggedTime" withParameters:nil];
+        NSLog(@"Heartbeat ... ActivityEditViewController.m, logEvent:ChangingLoggedTime");
+        
       cell.textLabel.text = NSLocalizedString(@"Time of Practice", nil);
       cell.detailTextLabel.text = [self.dateFormatter stringFromDate:self.activity.date];
       break;
     }
 
     case kActivityTableViewSectionDuration: {
+        [Heartbeat logEvent:@"ChangingLoggedDuration" withParameters:nil];
+        NSLog(@"Heartbeat ... ActivityEditViewController.m, logEvent:ChangingLoggedDuration");
+        
       cell.textLabel.text = NSLocalizedString(@"Duration", nil);
       cell.detailTextLabel.text = [NSString stringWithTimeInterval:[self.activity.duration doubleValue]];
       break;
@@ -136,6 +149,9 @@
     }
       
     case kActivityTableViewSectionComments: {
+        [Heartbeat logEvent:@"ChangingLoggedComments" withParameters:nil];
+        NSLog(@"Heartbeat ... ActivityEditViewController.m, logEvent:ChangingLoggedComments");
+        
       cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
       cell.textLabel.text = NSLocalizedString(@"Comments", nil);
       cell.detailTextLabel.text = self.activity.comments;
@@ -251,6 +267,9 @@
     [alertView show];
     [alertView release];
   } else {
+      [Heartbeat logEvent:@"SaveLogEntry" withParameters:nil];
+      NSLog(@"Heartbeat ... ActivityEditViewController.m, logEvent:saveLogEntry");
+      
     [super handleDoneButtonTapped:sender];
   }
 }
@@ -259,6 +278,9 @@
  *  handleAudioValueChanged
  */
 - (void)handleAudioValueChanged:(id)sender {
+    [Heartbeat logEvent:@"ChangingLoggedAudioStatus" withParameters:nil];
+    NSLog(@"Heartbeat ... ActivityEditViewController.m, logEvent:ChangingLoggedAudioStatus");
+    
   UISwitch *audioSwitch = (UISwitch *)sender;
   self.activity.audio = [NSNumber numberWithBool:audioSwitch.on];
 }

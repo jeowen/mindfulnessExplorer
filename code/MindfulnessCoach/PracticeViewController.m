@@ -14,6 +14,7 @@
 #import "Song.h"
 #import "UIFactory.h"
 #import "UIView+VPDView.h"
+#import "Heartbeat.h"
 
 @implementation PracticeViewController
 
@@ -38,6 +39,7 @@
     if (viewContent == kPracticeViewContentPhotos) {
       self.fetchedContentItemsController = [self.client fetchedResultsControllerForPhotos];
     } else if (viewContent == kPracticeViewContentSongs) {
+      [Heartbeat logEvent:@"StartSongListening" withParameters:nil];
       self.fetchedContentItemsController = [self.client fetchedResultsControllerForSongs];
     }
   }
@@ -92,6 +94,9 @@
     self.songTitleLabel = label;
     [label release];
   } else if (self.viewContent == kPracticeViewContentEnvironment) {
+      [Heartbeat logEvent:@"PracticeViewContentEnvironment" withParameters:nil];
+      NSLog(@"Heartbeat .. PracticeViewController.m logEvent:PracticeViewContentEnvironment  -- > -- > --- > --> --> --->-->-->");
+      
     UILabel *instructionsLabel = [[UILabel alloc] initWithFrame:CGRectZero];
     instructionsLabel.backgroundColor = [UIColor clearColor];
     instructionsLabel.font = [AppConstants textFont];
@@ -152,6 +157,8 @@
 
   NSString *skipButtonTitle = NSLocalizedString(@"Change Song", nil);
   if (self.viewContent == kPracticeViewContentPhotos) {
+      [Heartbeat logEvent:@"PracticeViewContentPhotos" withParameters:nil];
+      NSLog(@"Heartbeat .. PracticeViewController.m logEvent:PracticeViewContentPhotos -- > -- > --- > --> --> --->-->-->");
     skipButtonTitle = NSLocalizedString(@"Change Photo", nil);
   }
   
@@ -351,6 +358,9 @@
 - (void)handleStartButtonTapped:(id)sender {
     // Show a MoviePlayer if we're in Song mode.
     if (self.viewContent == kPracticeViewContentSongs) {
+        [Heartbeat logEvent:@"StartSongListening" withParameters:nil];
+        NSLog(@"Heartbeat... logEvent:StartSongListening");
+        
         Song *currentSong = (Song *)self.fetchedContentObject;
         MPMediaItem *mediaItem = currentSong.mediaItem;
         if (mediaItem != nil) {
@@ -371,6 +381,9 @@
                 [alertView show];
                 [alertView release];
                 self.viewState = kPracticeViewStateStopped;
+                [Heartbeat logEvent:@"SongInvalidSong" withParameters:nil];
+                NSLog(@"Heartbeat .. ... logEvent:@SongInvalidSong");
+                
             }
         } else {
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Missing Song", nil)
@@ -381,8 +394,17 @@
             [alertView show];
             [alertView release];
             self.viewState = kPracticeViewStateStopped;
+            [Heartbeat logEvent:@"SongMissingSong" withParameters:nil];
+            NSLog(@"Heartbeat .. ... logEvent:SongMissingSong");
         }
     } else {
+        if (self.viewContent == kPracticeViewContentEnvironment) {
+            [Heartbeat logEvent:@"StartedListeningToEnvironment" withParameters:nil];
+            NSLog(@"Heartbeat .. ... logEvent:StartedListeningToEnvironment");
+        } else if (self.viewContent ==  kPracticeViewContentPhotos) {
+            [Heartbeat logEvent:@"StartedPhotoWatching" withParameters:nil];
+            NSLog(@"Heartbeat .. ... logEvent:StartedPhotoWatching");
+        }
         self.viewState = kPracticeViewStateRunning;
     }
 }
@@ -392,12 +414,16 @@
  */
 - (void)handleRestartButtonTapped:(id)sender {
   self.viewState = kPracticeViewStateStopped;
+      [Heartbeat logEvent:@"RestartActivity" withParameters:@{@"Timer Restarted From":self.countdownLabel.text}];
+    NSLog(@"Heartbeat .. ... logEvent:RestartActivity, Timer Restarted From: %@", self.countdownLabel.text);
 }
 
 /**
  *  handleStopButtonTapped
  */
 - (void)handleStopButtonTapped:(id)sender {
+      [Heartbeat logEvent:@"ActivityStopped" withParameters:@{@"Stopped": self.countdownLabel.text}];
+    NSLog(@"Heartbeat .. ... logEvent:ActivityStopped, Stopped: %@", self.countdownLabel.text);
   self.viewState = kPracticeViewStateStopped;
 }
 
@@ -406,9 +432,13 @@
  */
 - (void)handlePauseButtonTapped:(id)sender {
   if (self.viewState == kPracticeViewStateRunning) {
+          [Heartbeat logEvent:@"ActivityPaused" withParameters:@{@"Paused": self.countdownLabel.text}];
+      NSLog(@"Heartbeat .. ... logEvent:ActivityPaused, Paused: %@", self.countdownLabel.text);
     self.viewState = kPracticeViewStatePaused;
     [self.pauseButton setTitle:NSLocalizedString(@"Continue",nil) forState:UIControlStateNormal];
   } else {
+          [Heartbeat logEvent:@"ActivityUnpaused" withParameters:@{@"Unpaused": self.countdownLabel.text}];
+        NSLog(@"Heartbeat .. ... logEvent:ActivityUnpaused, Unpaused: %@", self.countdownLabel.text);
     self.viewState = kPracticeViewStateRunning;
     [self.pauseButton setTitle:NSLocalizedString(@"Pause",nil) forState:UIControlStateNormal];
   }
@@ -419,7 +449,9 @@
  */
 - (void)handleSkipButtonTapped:(id)sender {
   self.viewState = kPracticeViewStateStopped;
-  
+    [Heartbeat logEvent:@"ActivitySkipped" withParameters:nil];
+    NSLog(@"Heartbeat .. ... logEvent:ActivitySkipped");
+    
   NSArray *contentItems = [self.fetchedContentItemsController fetchedObjects];
   NSUInteger contentIndex = 0;
   
@@ -458,6 +490,12 @@
  *  handleActivityButtonTapped
  */
 - (void)handleActivityButtonTapped:(id)sender {
+    NSString *title = self.title;
+    if (!title) {
+        title = self.navigationItem.title;
+    }
+    [Heartbeat logEvent:@"ActivityToLog" withParameters:@{@"Location":title}];
+    
   ActivityEditViewController *editViewController = [[ActivityEditViewController alloc] initWithStyle:UITableViewStyleGrouped client:self.client activity:nil];
   editViewController.activity.duration = [NSNumber numberWithDouble:MAX(60, self.timerDuration - self.runTime)];
   [self presentModalNavigationControllerWithViewController:editViewController dismissTitle:nil];

@@ -4,6 +4,7 @@
 
 #import "HelpViewController.h"
 #import "Action.h"
+#import "Heartbeat.h"
 
 @implementation HelpViewController
 
@@ -30,6 +31,9 @@
  *  handleDoneButtonTapped
  */
 - (void)handleDoneButtonTapped:(id)sender {
+    [Heartbeat logEvent:@"HelpDoneButtonTapped" withParameters:nil];
+    NSLog(@"Heartbeat .. ... logEvent:HelpDoneButtonTapped");
+    
   [self dismissViewControllerAnimated:YES completion:nil];
 }
 

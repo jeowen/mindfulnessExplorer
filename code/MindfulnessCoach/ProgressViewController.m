@@ -8,6 +8,7 @@
 #import "GraphView.h"
 #import "NSDate+VPDDate.h"
 #import "UIView+VPDView.h"
+#import "Heartbeat.h"
 
 #define BAR_POSITION @"POSITION"
 #define BAR_HEIGHT @"HEIGHT"
@@ -87,12 +88,18 @@
   if (segmentedControl.selectedSegmentIndex == 0) {
     // Last Week
     filterDate = [filterDate dateByAddingDays:-7];
+    [Heartbeat logEvent:@"ViewProgressLastWeek" withParameters:nil];
+      NSLog(@"Heartbeat .. ... logEvent:ViewProgressLastWeek");
   } else if (segmentedControl.selectedSegmentIndex == 1) {
     // Last 2 Weeks
     filterDate = [filterDate dateByAddingDays:-14];
+      [Heartbeat logEvent:@"ViewProgressLast2Weeks" withParameters:nil];
+      NSLog(@"Heartbeat .. ... logEvent:ViewProgressLast2Weeks");
   } else if (segmentedControl.selectedSegmentIndex == 1) {
     // Last Month
     filterDate = [filterDate dateByAddingMonths:-1];
+      [Heartbeat logEvent:@"ViewProgressLastMonth" withParameters:nil];
+      NSLog(@"Heartbeat .. ... logEvent:ViewProgressLastMonth");
   }
   
   NSPredicate *predicate = [NSPredicate predicateWithFormat:@"date >= %@", filterDate];

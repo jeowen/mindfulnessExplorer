@@ -9,6 +9,7 @@
 #import "RoundedButton.h"
 #import "UIFactory.h"
 #import "UIView+VPDView.h"
+#import "Heartbeat.h"
 
 @implementation ButtonMenuViewController
 
@@ -21,6 +22,9 @@
   self = [super initWithClient:client];
   if (self != nil) {
     _viewLayout = ButtonMenuViewLayoutOneUp;
+      NSLog(@"Captured HOME button tap from TOP NAV OF LEARN MAIN VIEW");
+      NSLog(@"CATALYZE...CATALYZE...CATALYZE...CATALYE");
+      [Heartbeat logEvent:@"HomeScreen" withParameters:nil];
   }
   
   return self;

@@ -3,6 +3,8 @@
 //
 
 #import "FormViewController.h"
+#import "Heartbeat.h"
+#import "Action.h"
 
 @implementation FormViewController
 
@@ -117,6 +119,14 @@
  *  handleCancelButtonTapped
  */
 - (void)handleCancelButtonTapped:(id)sender; {
+    NSString *title = self.action.title;
+    if (!title) {
+        title = self.navigationItem.title;
+    }
+    [Heartbeat logEvent:@"CancelButtonTapped" withParameters:@{@"Location": title}];
+    NSLog(@"Heartbeat .. ... logEvent:CancelButtonTapped, Location:%@", title);
+
+    
   if (self.cancelledBlock != nil) {
     self.cancelledBlock();
   }
@@ -130,6 +140,13 @@
  *  handleDoneButtonTapped
  */
 - (void)handleDoneButtonTapped:(id)sender {
+    NSString *title = self.action.title;
+    if (!title) {
+        title = self.navigationItem.title;
+    }
+    [Heartbeat logEvent:@"DoneButtonTapped" withParameters:@{@"Location": title}];
+    NSLog(@"Heartbeat .. ... logEvent:DoneButtonTapped, location:%@", title);
+    
   if (self.doneBlock != nil) {
     self.doneBlock(self.fieldValue);
   }

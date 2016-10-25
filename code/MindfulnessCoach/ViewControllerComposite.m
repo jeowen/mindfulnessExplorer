@@ -18,6 +18,7 @@
 #import "RemindersEditViewController.h"
 #import "SettingsViewController.h"
 #import "UIView+VPDView.h"
+#import "Heartbeat.h"
 
 @implementation ViewControllerComposite
 
@@ -235,9 +236,13 @@
  *  handleHomeButtonTapped
  */
 - (void)handleHomeButtonTapped:(id)sender {
+      NSString *title = self.action.title;
+    
   HomeViewController *homeViewController = [[HomeViewController alloc] initWithClient:self.client];
   homeViewController.action = [self.client rootActionForGroup:kActionGroupHome];
   
+    [Heartbeat logEvent:@"HomeButtonTapped" withParameters:@{@"location":title}];
+    
   [self presentModalNavigationControllerWithViewController:homeViewController dismissTitle:nil];
   [homeViewController release];
 }
@@ -246,7 +251,11 @@
  *  handleHelpButtonTapped
  */
 - (void)handleHelpButtonTapped:(id)sender {
+    NSString *title = self.action.title;
+    
   NSString *helpFilename = self.action.helpFilename;
+    [Heartbeat logEvent:@"HelpButtonTapped" withParameters:@{@"location": title}];
+    NSLog(@"Heartbeat .. ... logEvent:HelpButtonTapped");
   if (helpFilename != nil) {
     HelpViewController *helpViewController = [[HelpViewController alloc] initWithClient:self.client 
                                                                                filename:self.action.helpFilename];
@@ -260,6 +269,9 @@
  *  handleModalDismissButtonTapped
  */
 - (void)handleModalDismissButtonTapped:(id)sender {
+    [Heartbeat logEvent:@"ModalDismissButtonTapped" withParameters:nil];
+    NSLog(@"Heartbeat .. ... logEvent:ModalDismissButtonTapped");
+    
   [self.viewController dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -295,8 +307,13 @@
 - (void)performActionBlockForAction:(Action *)action {
   ActionSelectedBlock actionBlock = [self.actionBlocks objectForKey:action.type];
   if (actionBlock != nil) {
-    actionBlock(action);
+    
+      actionBlock(action);
+      
   }
+    NSString * logForCatalyze = [NSString stringWithFormat:@"ViewController.%@", action.title];
+    
+    [Heartbeat logEvent:logForCatalyze withParameters:nil];
 }
 
 /**

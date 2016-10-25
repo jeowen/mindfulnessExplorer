@@ -14,6 +14,10 @@
 #import "LegalViewController.h"
 //#import "TestFlight.h"
 #import "WebViewController.h"
+#import "Catalyze.h"
+#import "Heartbeat.h"
+#import "InviteCodeController.h"
+#import "AnalyticsConstants.h"
 
 @implementation AppDelegate
 
@@ -34,14 +38,21 @@
     }
 
     [contentLoader release];
-    
+      [Catalyze setApiKey:@"4f834320-9c03-4aaa-9be5-ec6d071826d5" applicationId:@"0167988a-25b9-403a-90d8-21db9af1f896"];
     return YES;
 }
+
+
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+   [Heartbeat start];
+}
+
 
 /**
  *  applicationWillResignActive
  */
 - (void)applicationWillResignActive:(UIApplication *)application {
+    [Heartbeat stop];
     [self saveClientState];
 }
 
@@ -85,18 +96,37 @@
     
     // Show legal screen if required.
     if (self.client.hasViewedLegalScreens == NO) {
-        LegalViewController *legalViewController = [[LegalViewController alloc] initWithClient:self.client filename:kContentHTMLURLLegalEULA];
-        UINavigationController *legalNavigationController = [[UINavigationController alloc] initWithRootViewController:legalViewController];
-        legalNavigationController.navigationBar.tintColor = [AppConstants navigationBarTintColor];
+//        LegalViewController *legalViewController = [[LegalViewController alloc] initWithClient:self.client filename:kContentHTMLURLLegalEULA];
+//        UINavigationController *legalNavigationController = [[UINavigationController alloc] initWithRootViewController:legalViewController];
+//        legalNavigationController.navigationBar.tintColor = [AppConstants navigationBarTintColor];
+//        
+//        UIWindow *mainWindow = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+//        self.window = mainWindow;
+//        self.window.rootViewController = legalNavigationController;
+//        [self.window makeKeyAndVisible];
+//        
+////        [homeNavigationController presentViewController:legalNavigationController animated:NO completion:nil];
+//        [legalNavigationController release];
+//        [legalViewController release];
+        
+        // *------------------------
+        // First attempt to add inviteCode controller
+        InviteCodeController *inviteCodeController = [[InviteCodeController alloc] initWithClient:self.client filename:kContentHTMLURLInviteCodeScreen];
+        UINavigationController *inviteCodeNavigationController = [[UINavigationController alloc] initWithRootViewController:inviteCodeController];
+        inviteCodeNavigationController.navigationBar.tintColor = [AppConstants navigationBarTintColor];
         
         UIWindow *mainWindow = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
         self.window = mainWindow;
-        self.window.rootViewController = legalNavigationController;
+        self.window.rootViewController = inviteCodeController;
         [self.window makeKeyAndVisible];
         
-//        [homeNavigationController presentViewController:legalNavigationController animated:NO completion:nil];
-        [legalNavigationController release];
-        [legalViewController release];
+
+        
+        //[homeNavigationController presentViewController:inviteCodeNavigationController animated:NO completion:nil];
+        [inviteCodeNavigationController release];
+        [inviteCodeController release];
+        // * -----------------------
+        
     }
     else [self exitingFromLegal];
     
@@ -169,6 +199,7 @@
 
 - (void) exitingFromLegal {
     NSMutableArray *navigationViewControllers = [[NSMutableArray alloc] init];
+    [Heartbeat logEvent:@"homeScreen" withParameters:nil];
     
     // Learn
     ActionMenuViewController *learnMenuViewController = [[ActionMenuViewController alloc] initWithStyle:UITableViewStyleGrouped

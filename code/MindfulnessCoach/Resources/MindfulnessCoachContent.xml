@@ -11,6 +11,7 @@
 		<action type="root" group="learn" title="Learn" icon="tabBarIconLearn.png">
 			<action type="page" filename="learnWhatIsMindfulness.html" title="What is Mindfulness?" />
 			<action type="page" filename="learnWhyPracticeMindfulness.html" title="Why Practice Mindfulness?" navigationTitle="Why Practice?" />
+            <action type="page" filename="learnBenefitsForDiabetes.html" title="Mindfulness for Diabetes" />
 			<action type="page" filename="learnBenefitsForVeterans.html" title="Mindfulness for Veterans" />
 			<action type="page" filename="learnBenefitsForPTSD.html" title="Benefits of Mindfulness for PTSD" navigationTitle="Benefits for PTSD" />
 			<action type="page" filename="learnPracticeChallenges.html" title="Practice Challenges with PTSD" navigationTitle="Practice with PTSD" />
@@ -42,7 +43,12 @@
 	</actions>
 	
 	<exercises>
-		<exercise title="Mindful Breathing" filename="practiceMindfulBreathing.html" />
+		<exercise title="Awareness of Breath" filename="practiceAwarenessOfBreath.html" />
+        <exercise title="Body Scan Female" filename="practiceBodyScanFemale.html" />
+        <exercise title="Body Scan Male" filename="practiceBodyScanMale.html" />
+        <exercise title="Mindful Movement" filename="practiceMindfulMovement.html" />
+        <exercise title="Mountain" filename="practiceMountain.html" />
+        <exercise title="Three Minute Mindfulness" filename="practiceThreeMinuteMindfulness.html" />
 		<exercise title="Mindful Walking" filename="practiceMindfulWalking.html" />
 		<exercise title="Mindful Eating" filename="practiceMindfulEating.html" />
 		<exercise title="Mindful Listening" filename="practiceMindfulListening.html" />

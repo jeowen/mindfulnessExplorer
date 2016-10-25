@@ -10,6 +10,7 @@
 #import "PhotosViewController.h"
 #import "SongsViewController.h"
 #import "WebPage.h"
+#import "Heartbeat.h"
 
 #pragma mark - Private Interface
 
@@ -122,18 +123,31 @@
     [self.navigationController pushViewController:webViewController animated:YES];
     [webViewController release];
   } else if ([lastPathComponent isEqualToString:kContentHTMLURLViewSongsController]) {
+      [Heartbeat logEvent:@"WebViewSongsController" withParameters:nil];
+      NSLog(@"Heartbeat .. ... logEvent:WebViewSongsController");
     SongsViewController *songsController = [[SongsViewController alloc] initWithStyle:UITableViewStylePlain client:self.client];
     [self.navigationController pushViewController:songsController animated:YES];
     [songsController release];
   } else if ([lastPathComponent isEqualToString:kContentHTMLURLViewPhotosController]) {
+      [Heartbeat logEvent:@"WebViewPhotosController" withParameters:nil];
+      NSLog(@"Heartbeat .. ... logEvent:WebViewPhotosController");
+      
     PhotosViewController *photosController = [[PhotosViewController alloc] initWithStyle:UITableViewStylePlain client:self.client];
     [self.navigationController pushViewController:photosController animated:YES];
     [photosController release];
   } else if ([lastPathComponent isEqualToString:kContentHTMLURLViewPracticePhotosController]) {
+      [Heartbeat logEvent:@"WebViewMyPhotoController" withParameters:nil];
+      NSLog(@"Heartbeat .. ... logEvent:WebViewMyPhotoController");
+      
     [self showPracticeViewControllerForContent:kPracticeViewContentPhotos title:NSLocalizedString(@"My Picture", nil)];
   } else if ([lastPathComponent isEqualToString:kContentHTMLURLViewPracticeSongsController]) {
+      [Heartbeat logEvent:@"WebViewMySongListening" withParameters:nil];
+      NSLog(@"Heartbeat .. ... logEvent:WebViewMySongListening");
+      
     [self showPracticeViewControllerForContent:kPracticeViewContentSongs title:NSLocalizedString(@"My Songs", nil)];
   } else if ([lastPathComponent isEqualToString:kContentHTMLURLViewPracticeEnvironmentController]) {
+      [Heartbeat logEvent:@"WebViewEnvironmentListening" withParameters:nil];
+      NSLog(@"Heartbeat .. ... logEvent:WebViewEnvironmentListening");
     [self showPracticeViewControllerForContent:kPracticeViewContentEnvironment title:NSLocalizedString(@"My Environment", nil)];
   } else if ([lastPathComponent isEqualToString:kContentHTMLURLPlayVideo]) {
     NSString *movieFilename = request.URL.fragment;

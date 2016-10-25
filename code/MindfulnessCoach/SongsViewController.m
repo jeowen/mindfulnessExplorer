@@ -6,6 +6,7 @@
 #import "Client.h"
 #import "Song.h"
 #import "UIFactory.h"
+#import "Heartbeat.h"
 
 @implementation SongsViewController
 
@@ -93,6 +94,9 @@
   [collection.items enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
     // Allow a maximum of 20 songs.
     if ([[self.fetchedResultsController fetchedObjects] count] >= 20) {
+        [Heartbeat logEvent:@"SongsExceedMax20" withParameters:nil];
+        NSLog(@"Heartbeat .. ... logEvent:SongsExceedMax20");
+        
       UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Maximum Songs Reached.", nil)
                                                           message:NSLocalizedString(@"You have reached the maximum song count of 20. "
                                                                                       "Please remove existing songs from your list before "
@@ -104,6 +108,8 @@
       [alertView release];
       *stop = YES;
     } else {
+        [Heartbeat logEvent:@"SongsAdded" withParameters:nil];
+        NSLog(@"Heartbeat .. ... logEvent:SongsAdded");
       MPMediaItem *mediaItem = (MPMediaItem *)obj;
       
       NSMutableDictionary *songAttributes = [[NSMutableDictionary alloc] initWithCapacity:4];

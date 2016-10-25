@@ -6,6 +6,7 @@
 #import "AppDelegate.h"
 #import "Client.h"
 #import "UIFactory.h"
+#import "Heartbeat.h"
 
 @implementation SettingsViewController
 
@@ -90,14 +91,21 @@
       self.client.authorizedToRecordUsageData = !self.client.isAuthorizedToRecordUsageData;
       UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
       if (self.client.isAuthorizedToRecordUsageData == YES) {
+          [Heartbeat logEvent:@"SettingsUserWantsToBeTracked" withParameters: nil];
+          NSLog(@"Heartbeat .. ... logEvent:SettingsUserWantsToBeTracked");
+          
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
       } else {
+          [Heartbeat logEvent:@"SettingsUserRefusesToBeTracked" withParameters: nil];
+          NSLog(@"Heartbeat .. ... logEvent:SettingsUserRefusesToBeTracked");
         cell.accessoryType = UITableViewCellAccessoryNone;
       }
       break;
     }
       
     case kTableViewSectionResetUserData: {
+        [Heartbeat logEvent:@"SettingsResetUserData" withParameters: nil];
+        NSLog(@"Heartbeat .. ... logEvent:ResetUserData");
       UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:NSLocalizedString(@"All user data will be permanently deleted.", nil)
                                                                delegate:self
                                                       cancelButtonTitle:NSLocalizedString(@"Cancel", nil)
@@ -120,8 +128,16 @@
  */
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
   if (buttonIndex == 0) {
+      [Heartbeat logEvent:@"SettingsResetDataConfirmed" withParameters:nil];
+      NSLog(@"Heartbeat .. ... logEvent:SettingsResetDataConfirmed");
+      
     AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
     [delegate clearUserDataAndResetApplicationState];
+  }
+  else if (buttonIndex == 1){
+      [Heartbeat logEvent:@"SettingsResetDataCancelled" withParameters:nil];
+      NSLog(@"Heartbeat .. ... logEvent:SettingsResetDataCancelled");
+      
   }
 }
 

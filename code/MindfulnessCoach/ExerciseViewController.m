@@ -7,6 +7,7 @@
 #import "ActivityEditViewController.h"
 #import "Exercise.h"
 #import "AppConstants.h"
+#import "Heartbeat.h"
 
 @implementation ExerciseViewController
 
@@ -21,6 +22,8 @@
     _exercise = [exercise retain];
     
     self.navigationItem.title = exercise.title;
+      NSString *practiceExerciseTitle = [NSString stringWithFormat: @"practiceExercise-%@", exercise.title];
+      [Heartbeat logEvent:practiceExerciseTitle withParameters:nil];
   }
   
   return self;

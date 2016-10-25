@@ -8,6 +8,7 @@
 #import "Client.h"
 #import "Photo.h"
 #import "UIFactory.h"
+#import "Heartbeat.h"
 
 #define THUMBNAIL_WIDTH 75
 #define THUMBNAIL_HEIGHT 75
@@ -91,8 +92,14 @@
  */
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
   [self dismissViewControllerAnimated:YES completion:nil];
-
+    
+    NSUInteger photoCount = [[self.fetchedResultsController fetchedObjects] count];
+    NSString *photoCountString = [NSString stringWithFormat:@"%lu", (unsigned long)photoCount];
+    
   if ([[self.fetchedResultsController fetchedObjects] count] >= 20) {
+      [Heartbeat logEvent:@"PhotosMaxCountExceeded"withParameters:@{@"Selected": photoCountString}];
+      NSLog(@"Heartbeat .. ... logEvent:PhotosMaxCountExceeded, Selected:%@", photoCountString);
+      
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Maximum Photos Reached.", nil)
                                                         message:NSLocalizedString(@"You have reached the maximum photo count of 20. "
                                                                                   "Please remove existing photos from your list before "
@@ -107,6 +114,8 @@
     // dangerously here folks. Ideal, we'd store the image data in a local file under our application, or
     // just rely on the reference URL for loading the image from the user's camera roll. (Only problem there
     // is that if the user deletes the image, then it's gone from our app. That may, or may not, be desired.)
+   [Heartbeat logEvent:@"PhotosSelected" withParameters:@{@"Selected": photoCountString}];
+       NSLog(@"Heartbeat .. ... logEvent:PhotosSelected, Selected:%@", photoCountString);
     NSURL *referenceURL = (NSURL *)[info valueForKey:UIImagePickerControllerReferenceURL];
     
     ALAssetsLibrary* assetsLibrary = [[ALAssetsLibrary alloc] init];
@@ -134,6 +143,9 @@
  *  imagePickerControllerDidCancel
  */
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    [Heartbeat logEvent:@"PhotoSelectionCancelled" withParameters:nil];
+    NSLog(@"Heartbeat .. ... logEvent:PhotoSelectionCancelled");
+    
   [self dismissViewControllerAnimated:YES completion:nil];
 }
 

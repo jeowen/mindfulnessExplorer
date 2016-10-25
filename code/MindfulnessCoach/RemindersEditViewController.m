@@ -11,6 +11,7 @@
 #import "NSDate+VPDDate.h"
 #import "NSString+VPDString.h"
 #import "UIFactory.h"
+#import "Heartbeat.h"
 
 #define kUserDefaultsKeyLogFrequency @"gov.va.mindfulnesscoach.log.frequency"
 #define kUserDefaultsKeyLogDate @"gov.va.mindfulnesscoach.log.date"
@@ -149,6 +150,9 @@
   
   switch (indexPath.section) {
     case kRemindersTableViewSectionFrequency: {
+        [Heartbeat logEvent:@"RemindersNavToFrequency" withParameters:nil];
+        NSLog(@"Heartbeat .. ... logEvent:RemindersNavToFrequency");
+        
       formViewController = [[NotificationFrequencyFormViewController alloc] initWithStyle:UITableViewStyleGrouped 
                                                                                    client:self.client 
                                                                                fieldTitle:NSLocalizedString(@"Frequency", nil)];
@@ -162,7 +166,10 @@
       
     case kRemindersTableViewSectionDate: {
       if (self.editMode == RemindersEditModeLogReminder) {
-        formViewController = [[DateFormViewController alloc] initWithStyle:UITableViewStyleGrouped 
+          [Heartbeat logEvent:@"RemindersNavToTimeOfDay" withParameters:nil];
+          NSLog(@"Heartbeat .. ... logEvent:RemindersNavToTimeOfDay");
+          
+        formViewController = [[DateFormViewController alloc] initWithStyle:UITableViewStyleGrouped
                                                                     client:self.client 
                                                                 fieldTitle:NSLocalizedString(@"Time of day", nil)];
         [(DateFormViewController *)formViewController setDate:self.date];
@@ -172,6 +179,8 @@
           [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationNone];
         };
       } else if (self.editMode == RemindersEditModeRandomReminders) {
+          [Heartbeat logEvent:@"RemindersRandomReminders" withParameters:nil];
+          NSLog(@"Heartbeat .. ... logEvent:RemindersRandomReminders");
         BlackoutsViewController *viewController = [[BlackoutsViewController alloc] initWithStyle:UITableViewStyleGrouped client:self.client];
         [self.navigationController pushViewController:viewController animated:YES];
         [viewController release];
@@ -197,6 +206,8 @@
  *  handleAudioValueChanged
  */
 - (void)handleAudioValueChanged:(id)sender {
+    [Heartbeat logEvent:@"RemindersAudioSettingSwitched" withParameters:nil];
+    NSLog(@"Heartbeat .. ... logEvent:RemindersAudioSettingSwitched");
   UISwitch *audioSwitch = (UISwitch *)sender;
   self.audioAlert = audioSwitch.on;
 }
@@ -207,6 +218,35 @@
 - (void)handleSaveButtonTapped:(id)sender {
   [self.notificationsManager cancelAllNotifications];
   [self rebuildNotifications];
+    
+    NSCalendar *cal = [NSCalendar currentCalendar];
+    cal.timeZone = [NSTimeZone timeZoneWithAbbreviation:@"UTC"];
+    unsigned flags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
+    NSDateComponents *components = [cal components:flags fromDate:[NSDate date]];
+    NSString *timestamp = [NSString stringWithFormat:@"%ld-%02ld-%02ld'T'%02ld:%02ld:%02ld"
+, components.year, components.month, components.day, components.hour, components.minute, components.second];
+    
+    NSMutableDictionary *heartBeatData = [NSMutableDictionary dictionary];
+    [heartBeatData setValue:[NSString stringWithNotificationFrequency:self.frequency] forKey:@"Reminder Frequency"];
+    
+    NSString *dataFrequency = @"";
+    if (self.editMode == RemindersEditModeLogReminder) {
+        dataFrequency = [self.dateFormatter stringFromDate:self.date];
+    } else if (self.editMode == RemindersEditModeRandomReminders) {
+        dataFrequency = @"Random";
+    }
+    [heartBeatData setValue:dataFrequency forKey:@"Remind during Time of Day"];
+    
+    NSString *dataAudio = @"Audio Off";
+    if (self.audioAlert) {
+        dataAudio = @"Audio On";
+    }
+    [heartBeatData setValue:dataAudio forKey:@"Audio Alert Status"];
+    
+    [heartBeatData setValue:timestamp forKey:@"Time Reminder Updated/Saved"];
+    [Heartbeat logEvent:@"RemindersSaved" withParameters: heartBeatData];
+    NSLog(@"Heartbeat .. ... logEvent:RemindersSaved with:%@", heartBeatData);
+    
   [self saveToUserDefaults];
   [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -215,6 +255,9 @@
  *  handleCancelButtonTapped
  */
 - (void)handleCancelButtonTapped:(id)sender {
+     [Heartbeat logEvent:@"RemindersCancelUpdate" withParameters:@{@"Location":self.title}];
+    NSLog(@"Heartbeat .. ... logEvent:RemindersCancelUpdate Location:%@", self.title);
+    
   [self dismissViewControllerAnimated:YES completion:nil];
 }
 
