@@ -45,6 +45,13 @@
 		5652FB9C1D809A3B00EA1B8D /* MyNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652FB761D809A3B00EA1B8D /* MyNavigationController.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		5652FB9D1D809A3B00EA1B8D /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 5652FB781D809A3B00EA1B8D /* Reachability.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		5652FB9F1D80D67B00EA1B8D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5652FB9E1D80D67B00EA1B8D /* Security.framework */; };
+		56D2AA401DBF2A9800BABE72 /* practiceAwarenessOfBreath.html in Resources */ = {isa = PBXBuildFile; fileRef = 56D2AA3F1DBF2A9800BABE72 /* practiceAwarenessOfBreath.html */; };
+		56D2AA471DBF2ABB00BABE72 /* AwarenessOfBreath.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 56D2AA411DBF2ABB00BABE72 /* AwarenessOfBreath.mp4 */; };
+		56D2AA481DBF2ABB00BABE72 /* BodyScanFemale.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 56D2AA421DBF2ABB00BABE72 /* BodyScanFemale.mp4 */; };
+		56D2AA491DBF2ABB00BABE72 /* BodyScanMale.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 56D2AA431DBF2ABB00BABE72 /* BodyScanMale.mp4 */; };
+		56D2AA4A1DBF2ABB00BABE72 /* MindfulMovement.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 56D2AA441DBF2ABB00BABE72 /* MindfulMovement.mp4 */; };
+		56D2AA4B1DBF2ABB00BABE72 /* Mountain.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 56D2AA451DBF2ABB00BABE72 /* Mountain.mp4 */; };
+		56D2AA4C1DBF2ABB00BABE72 /* ThreeMinute.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 56D2AA461DBF2ABB00BABE72 /* ThreeMinute.mp4 */; };
 		B90B9E6E1559BD740001FAEF /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B90B9E6D1559BD740001FAEF /* SettingsViewController.m */; };
 		B90B9E75156068230001FAEF /* practiceChime.wav in Resources */ = {isa = PBXBuildFile; fileRef = B90B9E74156068230001FAEF /* practiceChime.wav */; };
 		B90B9E77156068730001FAEF /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B90B9E76156068730001FAEF /* AudioToolbox.framework */; };
@@ -348,6 +355,13 @@
 		5652FB771D809A3B00EA1B8D /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		5652FB781D809A3B00EA1B8D /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		5652FB9E1D80D67B00EA1B8D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		56D2AA3F1DBF2A9800BABE72 /* practiceAwarenessOfBreath.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = practiceAwarenessOfBreath.html; sourceTree = "<group>"; };
+		56D2AA411DBF2ABB00BABE72 /* AwarenessOfBreath.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = AwarenessOfBreath.mp4; path = "../Shaddy Recordings/AwarenessOfBreath.mp4"; sourceTree = "<group>"; };
+		56D2AA421DBF2ABB00BABE72 /* BodyScanFemale.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = BodyScanFemale.mp4; path = "../Shaddy Recordings/BodyScanFemale.mp4"; sourceTree = "<group>"; };
+		56D2AA431DBF2ABB00BABE72 /* BodyScanMale.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = BodyScanMale.mp4; path = "../Shaddy Recordings/BodyScanMale.mp4"; sourceTree = "<group>"; };
+		56D2AA441DBF2ABB00BABE72 /* MindfulMovement.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = MindfulMovement.mp4; path = "../Shaddy Recordings/MindfulMovement.mp4"; sourceTree = "<group>"; };
+		56D2AA451DBF2ABB00BABE72 /* Mountain.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = Mountain.mp4; path = "../Shaddy Recordings/Mountain.mp4"; sourceTree = "<group>"; };
+		56D2AA461DBF2ABB00BABE72 /* ThreeMinute.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = ThreeMinute.mp4; path = "../Shaddy Recordings/ThreeMinute.mp4"; sourceTree = "<group>"; };
 		B90B9E6C1559BD740001FAEF /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		B90B9E6D1559BD740001FAEF /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		B90B9E74156068230001FAEF /* practiceChime.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = practiceChime.wav; sourceTree = "<group>"; };
@@ -975,6 +989,7 @@
 		B96024F3147B7E6C009D1A6A /* HTML */ = {
 			isa = PBXGroup;
 			children = (
+				56D2AA3F1DBF2A9800BABE72 /* practiceAwarenessOfBreath.html */,
 				B960250E147B8F3F009D1A6A /* aboutMindfulnessCoach.html */,
 				B960250F147B8F3F009D1A6A /* aboutProjectPartners.html */,
 				B9602510147B8F3F009D1A6A /* aboutProjectTeam.html */,
@@ -1062,6 +1077,12 @@
 		B989FD8A15003B1E0028D333 /* Video */ = {
 			isa = PBXGroup;
 			children = (
+				56D2AA411DBF2ABB00BABE72 /* AwarenessOfBreath.mp4 */,
+				56D2AA421DBF2ABB00BABE72 /* BodyScanFemale.mp4 */,
+				56D2AA431DBF2ABB00BABE72 /* BodyScanMale.mp4 */,
+				56D2AA441DBF2ABB00BABE72 /* MindfulMovement.mp4 */,
+				56D2AA451DBF2ABB00BABE72 /* Mountain.mp4 */,
+				56D2AA461DBF2ABB00BABE72 /* ThreeMinute.mp4 */,
 				B989FDB7150401C00028D333 /* BodyScan.mp4 */,
 				B989FD971502ADBD0028D333 /* Breathing.mp4 */,
 				B989FDA915033C010028D333 /* Clouds.mp4 */,
@@ -1416,6 +1437,7 @@
 				B96024F9147B7E6C009D1A6A /* helpPractice.html in Resources */,
 				B96024FC147B7E6C009D1A6A /* layout.html in Resources */,
 				B96024FE147B816C009D1A6A /* learn.html in Resources */,
+				56D2AA481DBF2ABB00BABE72 /* BodyScanFemale.mp4 in Resources */,
 				B9602511147B8F3F009D1A6A /* aboutMindfulnessCoach.html in Resources */,
 				B9602512147B8F3F009D1A6A /* aboutProjectPartners.html in Resources */,
 				B9602513147B8F3F009D1A6A /* aboutProjectTeam.html in Resources */,
@@ -1433,6 +1455,7 @@
 				B960258D147CC498009D1A6A /* helpReminders.html in Resources */,
 				B9602593147CC6A5009D1A6A /* helpTrack.html in Resources */,
 				B96025A0147CD729009D1A6A /* legalEULA.html in Resources */,
+				56D2AA4C1DBF2ABB00BABE72 /* ThreeMinute.mp4 in Resources */,
 				B96025A1147CD729009D1A6A /* legalIntroduction.html in Resources */,
 				B9A704A6149713F100B2AC08 /* learnBenefitsForPTSD.html in Resources */,
 				B9A704A7149713F100B2AC08 /* learnBenefitsForVeterans.html in Resources */,
@@ -1441,6 +1464,7 @@
 				B9A704AA149713F100B2AC08 /* learnWhatIsMindfulness.html in Resources */,
 				B9A704AB149713F100B2AC08 /* learnWhyPracticeMindfulness.html in Resources */,
 				B989FD981502ADBD0028D333 /* Breathing.mp4 in Resources */,
+				56D2AA4B1DBF2ABB00BABE72 /* Mountain.mp4 in Resources */,
 				B989FDAD15033C010028D333 /* Clouds.mp4 in Resources */,
 				B989FDAE15033C010028D333 /* Discomfort.mp4 in Resources */,
 				5652FB981D809A3B00EA1B8D /* CMASetup.py in Resources */,
@@ -1469,6 +1493,7 @@
 				B99DFC17173A305B000BBB62 /* learnMindfulnessA@2x.png in Resources */,
 				B99DFC18173A305B000BBB62 /* logoVA.png in Resources */,
 				B99DFC19173A305B000BBB62 /* logoVA@2x.png in Resources */,
+				56D2AA491DBF2ABB00BABE72 /* BodyScanMale.mp4 in Resources */,
 				B99DFC1A173A305B000BBB62 /* practiceBodyScan.png in Resources */,
 				B99DFC1B173A305B000BBB62 /* practiceBodyScan@2x.png in Resources */,
 				B99DFC1C173A305B000BBB62 /* practiceCloudsInTheSky.png in Resources */,
@@ -1484,6 +1509,7 @@
 				B99DFC26173A305B000BBB62 /* practiceMindfulEating.png in Resources */,
 				B99DFC27173A305B000BBB62 /* practiceMindfulEating@2x.png in Resources */,
 				B99DFC28173A305B000BBB62 /* practiceMindfulListening.png in Resources */,
+				56D2AA4A1DBF2ABB00BABE72 /* MindfulMovement.mp4 in Resources */,
 				B99DFC29173A305B000BBB62 /* practiceMindfulListening@2x.png in Resources */,
 				B99DFC2A173A305B000BBB62 /* practiceMindfulLooking.png in Resources */,
 				B99DFC2B173A305B000BBB62 /* practiceMindfulLooking@2x.png in Resources */,
@@ -1538,12 +1564,14 @@
 				B99DFC64173A333E000BBB62 /* menuIconAboutProjectTeam@2x.png in Resources */,
 				B99DFC65173A333E000BBB62 /* menuIconAboutSettings.png in Resources */,
 				B99DFC66173A333E000BBB62 /* menuIconAboutSettings@2x.png in Resources */,
+				56D2AA471DBF2ABB00BABE72 /* AwarenessOfBreath.mp4 in Resources */,
 				B99DFC6E173A3435000BBB62 /* homeLearn.png in Resources */,
 				B9795A05187F6AAF00F51532 /* release_notes.md in Resources */,
 				B99DFC6F173A3435000BBB62 /* homeLearn@2x.png in Resources */,
 				B99DFC70173A3435000BBB62 /* homePracticeMindfulness.png in Resources */,
 				B99DFC71173A3435000BBB62 /* homePracticeMindfulness@2x.png in Resources */,
 				B99DFC72173A3435000BBB62 /* homeTrackYourProgress.png in Resources */,
+				56D2AA401DBF2A9800BABE72 /* practiceAwarenessOfBreath.html in Resources */,
 				B99DFC73173A3435000BBB62 /* homeTrackYourProgress@2x.png in Resources */,
 				B99DFC76173A34DA000BBB62 /* homeReminder.png in Resources */,
 				B99DFC77173A34DA000BBB62 /* homeReminder@2x.png in Resources */,
@@ -1777,7 +1805,7 @@
 					"$(inherited)",
 					"./**",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = explorer.mindfulness;
+				PRODUCT_BUNDLE_IDENTIFIER = explorer.mindfulnessDiabetes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -1802,7 +1830,7 @@
 					"$(inherited)",
 					"./**",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = explorer.mindfulness;
+				PRODUCT_BUNDLE_IDENTIFIER = explorer.mindfulnessDiabetes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;

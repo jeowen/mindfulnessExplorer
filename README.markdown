@@ -1,6 +1,17 @@
-Mindfulness Coach
+Mindfulness Diabetes
 =================
 
+REPLACES APP STORE VERSION OF MINDFULNESS COACH WITH:
+- 6 different practice exercises:
+Mindful Breathing --> AwarenessOfBreath
+Mindful Walking --> Mindful Movement
+Mindful Eating --> Mountain
+Mindful Listening --> Mindful Listening
+Mindful Looking --> Mindful Looking
+Leaves On a Stream --> Three Minute Mindfulness
+Clouds in the Sky --> REMOVED
+Body Scan --> Body Scan Male, Body Scan Female
+Emotional Discomfort --> 
 Mindfulness Coach is a mobile phone application for Veterans and Service Members to learn and practice mindfulness skills. It is intended to help build this important skill for those who would like to build their resilience and manage their lives and emotions better.
 
 This application provides:
@@ -24,7 +35,7 @@ T2 is a component center of the Defense Centers of Excellence for Psychological 
 	
 For more information about mindfulness and other topics for Veterans, see [http://ptsd.va.gov](http://ptsd.va.gov).
 
-Team
+Mindfulness Coach Team
 ----
 
 * Julia E. Hoffman, Psy.D.
@@ -35,6 +46,14 @@ Team
 * Carolyn Greene, Ph.D.
 * Josef I. Ruzek, Ph.D.
 * Kenneth Weingardt, Ph.D.
+
+
+Mindfulness Diabetes Team
+----
+
+* Monica DiNardo, Ph.D., R.N.
+* Shaddy Saba
+* Jason E. Owen, Ph.D., M.P.H.
 
 _Design and Development:_
 
